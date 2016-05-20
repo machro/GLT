@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class PicoJavaParser extends Parser {
 	static public class Terminals {
 		static public final short EOF = 0;
-		static public final short IDENTIFYER = 1;
+		static public final short IDENTIFIER = 1;
 		static public final short LPAREN = 2;
 		static public final short LBRACE = 3;
 		static public final short TRUE = 4;
@@ -87,9 +87,9 @@ public class PicoJavaParser extends Parser {
 			Action.RETURN,	// [10] statement = whileStatement
 			Action.NONE,  	// [11] opt$extends = 
 			Action.RETURN,	// [12] opt$extends = extends
-			RETURN4,	// [13] classDecl = KEYWORD_CLASS IDENTIFYER opt$extends block; returns 'block' although none is marked
+			RETURN4,	// [13] classDecl = KEYWORD_CLASS IDENTIFIER opt$extends block; returns 'block' although none is marked
 			RETURN2,	// [14] extends = KEYWORD_EXTENDS use; returns 'use' although none is marked
-			RETURN3,	// [15] varDecl = name IDENTIFYER SEMICOLON; returns 'SEMICOLON' although none is marked
+			RETURN3,	// [15] varDecl = name IDENTIFIER SEMICOLON; returns 'SEMICOLON' although none is marked
 			RETURN4,	// [16] assignStatement = name ASSIGN exp SEMICOLON; returns 'SEMICOLON' although none is marked
 			RETURN5,	// [17] whileStatement = KEYWORD_WHILE LPAREN exp RPAREN statement; returns 'statement' although none is marked
 			Action.RETURN,	// [18] exp = name
@@ -97,8 +97,8 @@ public class PicoJavaParser extends Parser {
 			RETURN3,	// [20] exp = exp LOGIC_OR exp; returns 'exp' although none is marked
 			RETURN3,	// [21] exp = exp LOGIC_AND exp; returns 'exp' although none is marked
 			RETURN3,	// [22] exp = LPAREN exp RPAREN; returns 'RPAREN' although none is marked
-			Action.RETURN,	// [23] use = IDENTIFYER
-			Action.RETURN,	// [24] name = IDENTIFYER
+			Action.RETURN,	// [23] use = IDENTIFIER
+			Action.RETURN,	// [24] name = IDENTIFIER
 			RETURN3,	// [25] name = name POINT use; returns 'use' although none is marked
 			Action.RETURN,	// [26] booleanLiteral = TRUE
 			Action.RETURN	// [27] booleanLiteral = FALSE

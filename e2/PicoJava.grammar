@@ -2,7 +2,7 @@
 
 %terminals LBRACE, RBRACE, LPAREN, RPAREN;
 %terminals SEMICOLON, ASSIGN, POINT;
-%terminals IDENTIFYER;
+%terminals IDENTIFIER;
 %terminals KEYWORD_CLASS, KEYWORD_EXTENDS, KEYWORD_WHILE;
 %terminals TRUE, FALSE, LOGIC_AND, LOGIC_OR;
 
@@ -27,7 +27,7 @@ statement
 	;
 
 classDecl
-	= KEYWORD_CLASS IDENTIFYER extends? block
+	= KEYWORD_CLASS IDENTIFIER extends? block
 	;
 
 extends
@@ -35,7 +35,7 @@ extends
 	;
 
 varDecl
-	= name IDENTIFYER SEMICOLON
+	= name IDENTIFIER SEMICOLON
 	;
 
 assignStatement
@@ -55,10 +55,10 @@ exp
 	;
 
 use
-	= IDENTIFYER;
+	= IDENTIFIER;
 
 name
-	= IDENTIFYER
+	= IDENTIFIER
 	| name POINT use
 	;
 
