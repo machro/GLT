@@ -1,0 +1,11 @@
+%class "OberonParser";
+
+%terminals MUL, DIV, MOD, AND, PLUS, MINUS, OR;
+%terminals EQ, HASH, LESS, LEQ, GREATER, GEQ, DOT, COMMA, SEMICOLON, COLON, TILDE, ASSIGN;
+%terminals LBRACK, RBRACK, LPAREN, RPAREN;
+%terminals OF, THEN, DO, WHILE, END, ELSE, ELSEIF, IF;
+%terminals ARRAY, RECORD, CONST, TYPE, VAR, PROCEDURE, BEGIN, MODULE;
+
+%terminals NUMBER, IDENTIFIER;
+
+%goal module;

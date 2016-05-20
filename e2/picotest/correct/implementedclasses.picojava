@@ -1,0 +1,25 @@
+{
+	class y23 {
+		class T41 {
+			while(true)
+				yes = no;
+			while(false)
+				no = yes;
+			
+			T42 yes;
+			T41 no;
+		}
+		
+		while(y23.T41.yes)
+			x = b;
+	}
+	class Y23 {
+		Attr.x x;
+		Name.id y;
+	}
+	class T42 extends T41 {
+		class A{}
+		class B{}
+		class C{ while(true) a=a; }
+	}
+}

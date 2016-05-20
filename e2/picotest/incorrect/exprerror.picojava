@@ -1,0 +1,6 @@
+{
+	class firstClass {
+		while(a || ())
+			t = y;
+	}
+}

@@ -1,0 +1,5 @@
+{
+	class y23 {}
+	class Y23 {}
+	class T42 extends T41 {}
+}

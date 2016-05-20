@@ -1,0 +1,9 @@
+{
+	class firstClass {
+		while(true) {
+			t = x;
+			x = y;
+			y = t;
+		}
+	}
+}
