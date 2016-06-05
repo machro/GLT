@@ -1,0 +1,69 @@
+%class "PicoJavaParser";
+
+%terminals LBRACE, RBRACE, LPAREN, RPAREN;
+%terminals SEMICOLON, ASSIGN, POINT;
+%terminals IDENTIFIER;
+%terminals KEYWORD_CLASS, KEYWORD_EXTENDS, KEYWORD_WHILE;
+%terminals TRUE, FALSE, LOGIC_AND, LOGIC_OR;
+
+%left RPAREN;
+%left LOGIC_AND;
+%left LOGIC_OR;
+
+%goal block;
+
+block
+	= LBRACE blockStatement* RBRACE
+	;
+
+blockStatement
+	= classDecl
+	| varDecl
+	| statement;
+
+statement
+	= assignStatement
+	| whileStatement
+	;
+
+classDecl
+	= KEYWORD_CLASS IDENTIFIER extends? block
+	;
+
+extends
+	= KEYWORD_EXTENDS use
+	;
+
+varDecl
+	= name IDENTIFIER SEMICOLON
+	;
+
+assignStatement
+	= name ASSIGN exp SEMICOLON
+	;
+
+whileStatement
+	= KEYWORD_WHILE LPAREN exp RPAREN statement
+	;
+
+exp
+	= name
+	| booleanLiteral
+	| exp LOGIC_OR exp
+	| exp LOGIC_AND exp
+	| LPAREN exp RPAREN
+	;
+
+use
+	= IDENTIFIER;
+
+name
+	= IDENTIFIER
+	| name POINT use
+	;
+
+booleanLiteral
+	= TRUE
+	| FALSE
+	;
+

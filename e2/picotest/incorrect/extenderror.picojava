@@ -1,0 +1,6 @@
+{
+	class firstClass entends class1 class2 {
+		while(a || (b && c))
+			t = y;
+	}
+}
