@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="platoon" nsURI="platoon" nsPrefix="platoon">
+  <eClassifiers xsi:type="ecore:EClass" name="VehicleThatIsPulled" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pulledBy" lowerBound="1"
+        eType="#//VehicleThatCanPull"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Platoon">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="followers" upperBound="-1"
+        eType="#//FV" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="first" lowerBound="1" eType="#//LV"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Route">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" lowerBound="1"
+        upperBound="-1" eType="#//Action" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LV" eSuperTypes="#//VehicleThatCanPull">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="route" lowerBound="1" eType="#//Route"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FV" eSuperTypes="#//VehicleThatCanPull #//VehicleThatIsPulled"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VehicleThatCanPull" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" lowerBound="1"
+        eType="#//Constraints" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="platoons" lowerBound="1"
+        eType="#//Platoon" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="routes" lowerBound="1"
+        eType="#//Route" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Turn" abstract="true" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Forward" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="distance" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="10"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Left" eSuperTypes="#//Turn"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Right" eSuperTypes="#//Turn"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraints">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minHeadway" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="10"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxHeadway" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="10"/>
+  </eClassifiers>
+</ecore:EPackage>
