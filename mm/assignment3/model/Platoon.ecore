@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="platoon" nsURI="platoon" nsPrefix="platoon">
-  <eClassifiers xsi:type="ecore:EClass" name="VehicleThatIsPulled" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pulledBy" lowerBound="1"
-        eType="#//VehicleThatCanPull"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Platoon">
     <eStructuralFeatures xsi:type="ecore:EReference" name="followers" upperBound="-1"
         eType="#//FV" containment="true"/>
@@ -16,11 +12,14 @@
         upperBound="-1" eType="#//Action" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LV" eSuperTypes="#//VehicleThatCanPull">
+  <eClassifiers xsi:type="ecore:EClass" name="LV" eSuperTypes="#//Vehicle">
     <eStructuralFeatures xsi:type="ecore:EReference" name="route" lowerBound="1" eType="#//Route"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FV" eSuperTypes="#//VehicleThatCanPull #//VehicleThatIsPulled"/>
-  <eClassifiers xsi:type="ecore:EClass" name="VehicleThatCanPull" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="FV" eSuperTypes="#//Vehicle">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pulledBy" lowerBound="1"
+        eType="#//Vehicle"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vehicle" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Model">

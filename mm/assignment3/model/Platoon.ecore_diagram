@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_j4h8oCdcEeaNWJcyk-Keeg" type="Ecore" measurementUnit="Pixel">
-  <children xmi:type="notation:Shape" xmi:id="_tK9U0CddEeaNWJcyk-Keeg" type="2001" fontName="Segoe UI">
-    <children xmi:type="notation:DecorationNode" xmi:id="_tK974CddEeaNWJcyk-Keeg" type="5001"/>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_tK974SddEeaNWJcyk-Keeg" type="7001">
-      <styles xmi:type="notation:SortingStyle" xmi:id="_tK974iddEeaNWJcyk-Keeg"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_tK974yddEeaNWJcyk-Keeg"/>
-    </children>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_tK975CddEeaNWJcyk-Keeg" type="7002">
-      <styles xmi:type="notation:SortingStyle" xmi:id="_tK975SddEeaNWJcyk-Keeg"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_tK975iddEeaNWJcyk-Keeg"/>
-    </children>
-    <children xmi:type="notation:BasicCompartment" xmi:id="_tK975yddEeaNWJcyk-Keeg" type="7003">
-      <styles xmi:type="notation:SortingStyle" xmi:id="_tK976CddEeaNWJcyk-Keeg"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_tK976SddEeaNWJcyk-Keeg"/>
-    </children>
-    <element xmi:type="ecore:EClass" href="Platoon.ecore#//VehicleThatIsPulled"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tK9U0SddEeaNWJcyk-Keeg" x="685" y="180"/>
-  </children>
   <children xmi:type="notation:Shape" xmi:id="_0TjIICddEeaNWJcyk-Keeg" type="2001" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_0TjvMCddEeaNWJcyk-Keeg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_0TjvMSddEeaNWJcyk-Keeg" type="7001">
@@ -96,7 +79,7 @@
     <children xmi:type="notation:DecorationNode" xmi:id="_-H-A0idjEeaNWJcyk-Keeg" type="5001"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_-H-A0ydjEeaNWJcyk-Keeg" type="7001">
       <children xmi:type="notation:Node" xmi:id="_6wLBoCtgEeaDlcra7VzL3g" type="3001">
-        <element xmi:type="ecore:EAttribute" href="Platoon.ecore#//VehicleThatCanPull/name"/>
+        <element xmi:type="ecore:EAttribute" href="Platoon.ecore#//Vehicle/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_6wLosCtgEeaDlcra7VzL3g"/>
       </children>
       <styles xmi:type="notation:SortingStyle" xmi:id="_-H-A1CdjEeaNWJcyk-Keeg"/>
@@ -113,7 +96,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_-H-A2ydjEeaNWJcyk-Keeg"/>
       <layoutConstraint xmi:type="notation:Ratio" xmi:id="_Efe1ISdnEeaNWJcyk-Keeg" value="0.23076923076923078"/>
     </children>
-    <element xmi:type="ecore:EClass" href="Platoon.ecore#//VehicleThatCanPull"/>
+    <element xmi:type="ecore:EClass" href="Platoon.ecore#//Vehicle"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-H-A0SdjEeaNWJcyk-Keeg" x="540" y="255" height="81"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_PX2QYCdoEeaNWJcyk-Keeg" type="2001" fontName="Segoe UI">
@@ -261,14 +244,7 @@
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CDurwidkEeaNWJcyk-Keeg" points="[-4, 1, 304, -84]$[-305, 84, 3, -1]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CDv54CdkEeaNWJcyk-Keeg" id="(0.2,0.9807692307692307)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CDv54SdkEeaNWJcyk-Keeg" id="(0.6115702479338843,0.012345679012345678)"/>
-  </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_CjGIUCdkEeaNWJcyk-Keeg" type="4004" source="_15wpQCdjEeaNWJcyk-Keeg" target="_tK9U0CddEeaNWJcyk-Keeg">
-    <styles xmi:type="notation:FontStyle" xmi:id="_CjGIUSdkEeaNWJcyk-Keeg" fontName="Segoe UI"/>
-    <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_CjGIUidkEeaNWJcyk-Keeg" points="[11, -2, -79, -27]$[90, -10, 0, -35]$[90, 25, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CjHWcCdkEeaNWJcyk-Keeg" id="(0.9,0.5)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CjHWcSdkEeaNWJcyk-Keeg" id="(0.2796610169491525,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_CDv54SdkEeaNWJcyk-Keeg" id="(0.6320754716981132,0.0)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_pLAP8CdpEeaNWJcyk-Keeg" type="4004" source="_np4bcCdpEeaNWJcyk-Keeg" target="_fwXhgCdpEeaNWJcyk-Keeg">
     <styles xmi:type="notation:FontStyle" xmi:id="_pLAP8SdpEeaNWJcyk-Keeg" fontName="Segoe UI"/>
@@ -308,16 +284,18 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NhvT8CtFEealSoe5uuiaVA" id="(0.9056603773584906,0.09615384615384616)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NhvT8StFEealSoe5uuiaVA" id="(0.15,0.19230769230769232)"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_B1GssCtQEeao8NfBiwAWZQ" type="4002" source="_tK9U0CddEeaNWJcyk-Keeg" target="_-H-A0CdjEeaNWJcyk-Keeg">
+  <edges xmi:type="notation:Connector" xmi:id="_B1GssCtQEeao8NfBiwAWZQ" type="4002" source="_15wpQCdjEeaNWJcyk-Keeg" target="_-H-A0CdjEeaNWJcyk-Keeg">
     <children xmi:type="notation:DecorationNode" xmi:id="_B1GssytQEeao8NfBiwAWZQ" type="6001">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_B1GstCtQEeao8NfBiwAWZQ" x="47" y="-12"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_B1GstCtQEeao8NfBiwAWZQ" x="33" y="-27"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_B1GstStQEeao8NfBiwAWZQ" type="6003">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_B1GstitQEeao8NfBiwAWZQ" x="9" y="18"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_B1GstitQEeao8NfBiwAWZQ" x="-14" y="-18"/>
     </children>
     <styles xmi:type="notation:FontStyle" xmi:id="_B1GssStQEeao8NfBiwAWZQ" fontName="Segoe UI"/>
-    <element xmi:type="ecore:EReference" href="Platoon.ecore#//VehicleThatIsPulled/pulledBy"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_B1GssitQEeao8NfBiwAWZQ" points="[0, 26, 146, -63]$[0, 89, 146, 0]$[-85, 89, 61, 0]"/>
+    <element xmi:type="ecore:EReference" href="Platoon.ecore#//FV/pulledBy"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_B1GssitQEeao8NfBiwAWZQ" points="[0, 3, -9, -95]$[0, 36, -9, -62]$[0, 96, -9, -2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2wFvYCu4EeaX1e9PCvlsWQ" id="(0.775,0.9423076923076923)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5ANX4Cu4EeaX1e9PCvlsWQ" id="(0.8264462809917356,0.024691358024691357)"/>
   </edges>
   <edges xmi:type="notation:Connector" xmi:id="_GRMJkCtoEeaDlcra7VzL3g" type="4003" source="_PX2QYCdoEeaNWJcyk-Keeg" target="_0TjIICddEeaNWJcyk-Keeg">
     <children xmi:type="notation:DecorationNode" xmi:id="_GRMwoCtoEeaDlcra7VzL3g" type="6002">

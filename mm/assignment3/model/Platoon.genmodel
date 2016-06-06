@@ -5,9 +5,6 @@
     complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>Platoon.ecore</foreignModel>
   <genPackages prefix="Platoon" disposableProviderFactory="true" ecorePackage="Platoon.ecore#/">
-    <genClasses image="false" ecoreClass="Platoon.ecore#//VehicleThatIsPulled">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Platoon.ecore#//VehicleThatIsPulled/pulledBy"/>
-    </genClasses>
     <genClasses ecoreClass="Platoon.ecore#//Platoon">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Platoon.ecore#//Platoon/followers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Platoon.ecore#//Platoon/first"/>
@@ -19,9 +16,11 @@
     <genClasses ecoreClass="Platoon.ecore#//LV">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Platoon.ecore#//LV/route"/>
     </genClasses>
-    <genClasses ecoreClass="Platoon.ecore#//FV"/>
-    <genClasses image="false" ecoreClass="Platoon.ecore#//VehicleThatCanPull">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Platoon.ecore#//VehicleThatCanPull/name"/>
+    <genClasses ecoreClass="Platoon.ecore#//FV">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Platoon.ecore#//FV/pulledBy"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Platoon.ecore#//Vehicle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Platoon.ecore#//Vehicle/name"/>
     </genClasses>
     <genClasses ecoreClass="Platoon.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Platoon.ecore#//Model/constraints"/>
