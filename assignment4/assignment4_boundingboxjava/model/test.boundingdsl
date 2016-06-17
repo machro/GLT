@@ -1,0 +1,11 @@
+Box:
+	up 10
+	left 50
+	down 10
+	right 20
+	up 30
+	left 70
+	up 10
+	down 20
+	up 30
+	right 20

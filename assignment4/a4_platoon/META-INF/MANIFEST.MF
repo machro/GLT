@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: a4_platoon
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: a4_platoon; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: nl.tue.glt.platoon.impl,
+ nl.tue.glt.serializer,
+ nl.tue.glt.scoping,
+ nl.tue.glt.platoon.util,
+ nl.tue.glt.parser.antlr.internal,
+ nl.tue.glt.parser.antlr,
+ nl.tue.glt,
+ nl.tue.glt.services,
+ nl.tue.glt.validation,
+ nl.tue.glt.platoon,
+ nl.tue.glt.generator
+Import-Package: org.apache.log4j

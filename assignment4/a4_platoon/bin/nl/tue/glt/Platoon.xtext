@@ -1,0 +1,48 @@
+grammar nl.tue.glt.Platoon with org.eclipse.xtext.common.Terminals
+
+generate platoon "http://www.tue.nl/glt/Platoon"
+
+Model:
+	platoons=Platoon
+	routes=Route
+	constraints=Constraints; 
+
+Platoon:
+	'platoon:'
+		first=LV
+		followers+=FV*; 
+		
+FV: {FV}
+	'FV' name=ID 'front' 'runner' pulledBy=[Vehicle];
+
+LV: {LV}
+	'LV' name=ID 'route' route=[Route];
+	
+Vehicle:
+	LV | FV;
+
+Route:
+	'route' name=ID ':'
+		actions+=Action+; // At least one action in the route
+	
+Action:
+	Turn | Forward; 
+	
+Turn:
+	'turn' (Left|Right);
+
+Forward: {Forward}
+	'forward(' distance=INT ')';
+
+Left: {Left}
+	'Left';
+
+Right: {Right}
+	'Right';
+
+
+Constraints:
+	'constraints:'
+		minHeadway=INT '<=' 'headway' '<=' maxHeadway=INT;
+
+	

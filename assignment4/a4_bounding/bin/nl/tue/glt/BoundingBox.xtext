@@ -1,0 +1,27 @@
+grammar nl.tue.glt.BoundingBox with org.eclipse.xtext.common.Terminals
+
+generate boundingBox "http://www.tue.nl/glt/BoundingBox"
+
+Model: {Model}
+	'Box:'
+		moveCommands+=Move*;
+Move:
+	MoveX | MoveY;
+
+MoveX:
+	MoveLeft | MoveRight;
+
+MoveY:
+	MoveUp | MoveDown;
+
+MoveLeft:
+	'left' distance=INT;
+
+MoveRight:
+	'right' distance=INT;
+
+MoveUp:
+	'up' distance=INT;
+
+MoveDown:
+	'down' distance=INT;

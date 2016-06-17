@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: a4_platoon.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: a4_platoon.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: a4_platoon,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: nl.tue.glt.ide.contentassist.antlr.internal,
+ nl.tue.glt.ide.contentassist.antlr
+
