@@ -2,7 +2,7 @@ grammar nl.tue.glt.BoundingBox with org.eclipse.xtext.common.Terminals
 
 generate boundingBox "http://www.tue.nl/glt/BoundingBox"
 
-Model: {Model}
+World: {World}
 	'Box:'
 		moveCommands+=Move*;
 Move:

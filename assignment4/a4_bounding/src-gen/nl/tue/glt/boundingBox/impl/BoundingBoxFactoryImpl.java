@@ -65,7 +65,7 @@ public class BoundingBoxFactoryImpl extends EFactoryImpl implements BoundingBoxF
   {
     switch (eClass.getClassifierID())
     {
-      case BoundingBoxPackage.MODEL: return createModel();
+      case BoundingBoxPackage.WORLD: return createWorld();
       case BoundingBoxPackage.MOVE: return createMove();
       case BoundingBoxPackage.MOVE_X: return createMoveX();
       case BoundingBoxPackage.MOVE_Y: return createMoveY();
@@ -83,10 +83,10 @@ public class BoundingBoxFactoryImpl extends EFactoryImpl implements BoundingBoxF
    * <!-- end-user-doc -->
    * @generated
    */
-  public Model createModel()
+  public World createWorld()
   {
-    ModelImpl model = new ModelImpl();
-    return model;
+    WorldImpl world = new WorldImpl();
+    return world;
   }
 
   /**

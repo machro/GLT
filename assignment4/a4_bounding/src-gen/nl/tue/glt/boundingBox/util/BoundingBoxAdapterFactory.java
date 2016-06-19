@@ -76,9 +76,9 @@ public class BoundingBoxAdapterFactory extends AdapterFactoryImpl
     new BoundingBoxSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
+      public Adapter caseWorld(World object)
       {
-        return createModelAdapter();
+        return createWorldAdapter();
       }
       @Override
       public Adapter caseMove(Move object)
@@ -138,16 +138,16 @@ public class BoundingBoxAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link nl.tue.glt.boundingBox.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link nl.tue.glt.boundingBox.World <em>World</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see nl.tue.glt.boundingBox.Model
+   * @see nl.tue.glt.boundingBox.World
    * @generated
    */
-  public Adapter createModelAdapter()
+  public Adapter createWorldAdapter()
   {
     return null;
   }

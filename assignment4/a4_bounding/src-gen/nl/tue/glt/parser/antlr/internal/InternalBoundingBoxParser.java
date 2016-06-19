@@ -65,7 +65,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
         @Override
         protected String getFirstRuleName() {
-        	return "Model";
+        	return "World";
        	}
 
        	@Override
@@ -76,25 +76,25 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
 
-    // $ANTLR start "entryRuleModel"
-    // InternalBoundingBox.g:64:1: entryRuleModel returns [EObject current=null] : iv_ruleModel= ruleModel EOF ;
-    public final EObject entryRuleModel() throws RecognitionException {
+    // $ANTLR start "entryRuleWorld"
+    // InternalBoundingBox.g:64:1: entryRuleWorld returns [EObject current=null] : iv_ruleWorld= ruleWorld EOF ;
+    public final EObject entryRuleWorld() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleModel = null;
+        EObject iv_ruleWorld = null;
 
 
         try {
-            // InternalBoundingBox.g:64:46: (iv_ruleModel= ruleModel EOF )
-            // InternalBoundingBox.g:65:2: iv_ruleModel= ruleModel EOF
+            // InternalBoundingBox.g:64:46: (iv_ruleWorld= ruleWorld EOF )
+            // InternalBoundingBox.g:65:2: iv_ruleWorld= ruleWorld EOF
             {
-             newCompositeNode(grammarAccess.getModelRule()); 
+             newCompositeNode(grammarAccess.getWorldRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleModel=ruleModel();
+            iv_ruleWorld=ruleWorld();
 
             state._fsp--;
 
-             current =iv_ruleModel; 
+             current =iv_ruleWorld; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -109,12 +109,12 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleModel"
+    // $ANTLR end "entryRuleWorld"
 
 
-    // $ANTLR start "ruleModel"
-    // InternalBoundingBox.g:71:1: ruleModel returns [EObject current=null] : ( () otherlv_1= 'Box:' ( (lv_moveCommands_2_0= ruleMove ) )* ) ;
-    public final EObject ruleModel() throws RecognitionException {
+    // $ANTLR start "ruleWorld"
+    // InternalBoundingBox.g:71:1: ruleWorld returns [EObject current=null] : ( () otherlv_1= 'Box:' ( (lv_moveCommands_2_0= ruleMove ) )* ) ;
+    public final EObject ruleWorld() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
@@ -136,7 +136,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
             {
 
             				current = forceCreateModelElement(
-            					grammarAccess.getModelAccess().getModelAction_0(),
+            					grammarAccess.getWorldAccess().getWorldAction_0(),
             					current);
             			
 
@@ -144,7 +144,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
             otherlv_1=(Token)match(input,11,FOLLOW_3); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getModelAccess().getBoxKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getWorldAccess().getBoxKeyword_1());
             		
             // InternalBoundingBox.g:90:3: ( (lv_moveCommands_2_0= ruleMove ) )*
             loop1:
@@ -165,7 +165,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
             	    // InternalBoundingBox.g:92:5: lv_moveCommands_2_0= ruleMove
             	    {
 
-            	    					newCompositeNode(grammarAccess.getModelAccess().getMoveCommandsMoveParserRuleCall_2_0());
+            	    					newCompositeNode(grammarAccess.getWorldAccess().getMoveCommandsMoveParserRuleCall_2_0());
             	    				
             	    pushFollow(FOLLOW_3);
             	    lv_moveCommands_2_0=ruleMove();
@@ -174,7 +174,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
             	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getModelRule());
+            	    						current = createModelElementForParent(grammarAccess.getWorldRule());
             	    					}
             	    					add(
             	    						current,
@@ -214,7 +214,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleModel"
+    // $ANTLR end "ruleWorld"
 
 
     // $ANTLR start "entryRuleMove"

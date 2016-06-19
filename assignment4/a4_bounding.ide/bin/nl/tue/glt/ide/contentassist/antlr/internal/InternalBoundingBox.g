@@ -49,25 +49,25 @@ import nl.tue.glt.services.BoundingBoxGrammarAccess;
 	}
 }
 
-// Entry rule entryRuleModel
-entryRuleModel
+// Entry rule entryRuleWorld
+entryRuleWorld
 :
-{ before(grammarAccess.getModelRule()); }
-	 ruleModel
-{ after(grammarAccess.getModelRule()); } 
+{ before(grammarAccess.getWorldRule()); }
+	 ruleWorld
+{ after(grammarAccess.getWorldRule()); } 
 	 EOF 
 ;
 
-// Rule Model
-ruleModel 
+// Rule World
+ruleWorld 
 	@init {
 		int stackSize = keepStackSize();
 	}
 	:
 	(
-		{ before(grammarAccess.getModelAccess().getGroup()); }
-		(rule__Model__Group__0)
-		{ after(grammarAccess.getModelAccess().getGroup()); }
+		{ before(grammarAccess.getWorldAccess().getGroup()); }
+		(rule__World__Group__0)
+		{ after(grammarAccess.getWorldAccess().getGroup()); }
 	)
 ;
 finally {
@@ -312,80 +312,80 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Model__Group__0
+rule__World__Group__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Model__Group__0__Impl
-	rule__Model__Group__1
+	rule__World__Group__0__Impl
+	rule__World__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Model__Group__0__Impl
+rule__World__Group__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getModelAccess().getModelAction_0()); }
+	{ before(grammarAccess.getWorldAccess().getWorldAction_0()); }
 	()
-	{ after(grammarAccess.getModelAccess().getModelAction_0()); }
+	{ after(grammarAccess.getWorldAccess().getWorldAction_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Model__Group__1
+rule__World__Group__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Model__Group__1__Impl
-	rule__Model__Group__2
+	rule__World__Group__1__Impl
+	rule__World__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Model__Group__1__Impl
+rule__World__Group__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getModelAccess().getBoxKeyword_1()); }
+	{ before(grammarAccess.getWorldAccess().getBoxKeyword_1()); }
 	'Box:'
-	{ after(grammarAccess.getModelAccess().getBoxKeyword_1()); }
+	{ after(grammarAccess.getWorldAccess().getBoxKeyword_1()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Model__Group__2
+rule__World__Group__2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__Model__Group__2__Impl
+	rule__World__Group__2__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Model__Group__2__Impl
+rule__World__Group__2__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getModelAccess().getMoveCommandsAssignment_2()); }
-	(rule__Model__MoveCommandsAssignment_2)*
-	{ after(grammarAccess.getModelAccess().getMoveCommandsAssignment_2()); }
+	{ before(grammarAccess.getWorldAccess().getMoveCommandsAssignment_2()); }
+	(rule__World__MoveCommandsAssignment_2)*
+	{ after(grammarAccess.getWorldAccess().getMoveCommandsAssignment_2()); }
 )
 ;
 finally {
@@ -609,15 +609,15 @@ finally {
 }
 
 
-rule__Model__MoveCommandsAssignment_2
+rule__World__MoveCommandsAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getModelAccess().getMoveCommandsMoveParserRuleCall_2_0()); }
+		{ before(grammarAccess.getWorldAccess().getMoveCommandsMoveParserRuleCall_2_0()); }
 		ruleMove
-		{ after(grammarAccess.getModelAccess().getMoveCommandsMoveParserRuleCall_2_0()); }
+		{ after(grammarAccess.getWorldAccess().getMoveCommandsMoveParserRuleCall_2_0()); }
 	)
 ;
 finally {

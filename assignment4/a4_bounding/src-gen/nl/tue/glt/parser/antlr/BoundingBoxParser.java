@@ -27,7 +27,7 @@ public class BoundingBoxParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Model";
+		return "World";
 	}
 
 	public BoundingBoxGrammarAccess getGrammarAccess() {

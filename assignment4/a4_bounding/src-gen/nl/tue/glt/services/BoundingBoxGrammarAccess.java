@@ -23,25 +23,25 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 	
-	public class ModelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.glt.BoundingBox.Model");
+	public class WorldElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.glt.BoundingBox.World");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cModelAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cWorldAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cBoxKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cMoveCommandsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cMoveCommandsMoveParserRuleCall_2_0 = (RuleCall)cMoveCommandsAssignment_2.eContents().get(0);
 		
-		//Model:
-		//	{Model}
+		//World:
+		//	{World}
 		//	'Box:'
 		//	moveCommands+=Move*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Model} 'Box:' moveCommands+=Move*
+		//{World} 'Box:' moveCommands+=Move*
 		public Group getGroup() { return cGroup; }
 		
-		//{Model}
-		public Action getModelAction_0() { return cModelAction_0; }
+		//{World}
+		public Action getWorldAction_0() { return cWorldAction_0; }
 		
 		//'Box:'
 		public Keyword getBoxKeyword_1() { return cBoxKeyword_1; }
@@ -203,7 +203,7 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	private final ModelElements pModel;
+	private final WorldElements pWorld;
 	private final MoveElements pMove;
 	private final MoveXElements pMoveX;
 	private final MoveYElements pMoveY;
@@ -221,7 +221,7 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
-		this.pModel = new ModelElements();
+		this.pWorld = new WorldElements();
 		this.pMove = new MoveElements();
 		this.pMoveX = new MoveXElements();
 		this.pMoveY = new MoveYElements();
@@ -258,16 +258,16 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//Model:
-	//	{Model}
+	//World:
+	//	{World}
 	//	'Box:'
 	//	moveCommands+=Move*;
-	public ModelElements getModelAccess() {
-		return pModel;
+	public WorldElements getWorldAccess() {
+		return pWorld;
 	}
 	
-	public ParserRule getModelRule() {
-		return getModelAccess().getRule();
+	public ParserRule getWorldRule() {
+		return getWorldAccess().getRule();
 	}
 	
 	//Move:

@@ -24,13 +24,13 @@ public interface BoundingBoxFactory extends EFactory
   BoundingBoxFactory eINSTANCE = nl.tue.glt.boundingBox.impl.BoundingBoxFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
+   * Returns a new object of class '<em>World</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
+   * @return a new object of class '<em>World</em>'.
    * @generated
    */
-  Model createModel();
+  World createWorld();
 
   /**
    * Returns a new object of class '<em>Move</em>'.

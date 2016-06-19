@@ -6,11 +6,11 @@ package nl.tue.glt.serializer;
 import com.google.inject.Inject;
 import java.util.Set;
 import nl.tue.glt.boundingBox.BoundingBoxPackage;
-import nl.tue.glt.boundingBox.Model;
 import nl.tue.glt.boundingBox.MoveDown;
 import nl.tue.glt.boundingBox.MoveLeft;
 import nl.tue.glt.boundingBox.MoveRight;
 import nl.tue.glt.boundingBox.MoveUp;
+import nl.tue.glt.boundingBox.World;
 import nl.tue.glt.services.BoundingBoxGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -36,9 +36,6 @@ public class BoundingBoxSemanticSequencer extends AbstractDelegatingSemanticSequ
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == BoundingBoxPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case BoundingBoxPackage.MODEL:
-				sequence_Model(context, (Model) semanticObject); 
-				return; 
 			case BoundingBoxPackage.MOVE_DOWN:
 				sequence_MoveDown(context, (MoveDown) semanticObject); 
 				return; 
@@ -51,22 +48,13 @@ public class BoundingBoxSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case BoundingBoxPackage.MOVE_UP:
 				sequence_MoveUp(context, (MoveUp) semanticObject); 
 				return; 
+			case BoundingBoxPackage.WORLD:
+				sequence_World(context, (World) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
-	
-	/**
-	 * Contexts:
-	 *     Model returns Model
-	 *
-	 * Constraint:
-	 *     moveCommands+=Move*
-	 */
-	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
 	
 	/**
 	 * Contexts:
@@ -145,6 +133,18 @@ public class BoundingBoxSemanticSequencer extends AbstractDelegatingSemanticSequ
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getMoveUpAccess().getDistanceINTTerminalRuleCall_1_0(), semanticObject.getDistance());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     World returns World
+	 *
+	 * Constraint:
+	 *     moveCommands+=Move*
+	 */
+	protected void sequence_World(ISerializationContext context, World semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

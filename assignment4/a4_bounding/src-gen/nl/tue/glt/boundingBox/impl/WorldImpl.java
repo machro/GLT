@@ -6,8 +6,8 @@ package nl.tue.glt.boundingBox.impl;
 import java.util.Collection;
 
 import nl.tue.glt.boundingBox.BoundingBoxPackage;
-import nl.tue.glt.boundingBox.Model;
 import nl.tue.glt.boundingBox.Move;
+import nl.tue.glt.boundingBox.World;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -23,18 +23,18 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model</b></em>'.
+ * An implementation of the model object '<em><b>World</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link nl.tue.glt.boundingBox.impl.ModelImpl#getMoveCommands <em>Move Commands</em>}</li>
+ *   <li>{@link nl.tue.glt.boundingBox.impl.WorldImpl#getMoveCommands <em>Move Commands</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModelImpl extends MinimalEObjectImpl.Container implements Model
+public class WorldImpl extends MinimalEObjectImpl.Container implements World
 {
   /**
    * The cached value of the '{@link #getMoveCommands() <em>Move Commands</em>}' containment reference list.
@@ -51,7 +51,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModelImpl()
+  protected WorldImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   @Override
   protected EClass eStaticClass()
   {
-    return BoundingBoxPackage.Literals.MODEL;
+    return BoundingBoxPackage.Literals.WORLD;
   }
 
   /**
@@ -76,7 +76,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     if (moveCommands == null)
     {
-      moveCommands = new EObjectContainmentEList<Move>(Move.class, this, BoundingBoxPackage.MODEL__MOVE_COMMANDS);
+      moveCommands = new EObjectContainmentEList<Move>(Move.class, this, BoundingBoxPackage.WORLD__MOVE_COMMANDS);
     }
     return moveCommands;
   }
@@ -91,7 +91,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case BoundingBoxPackage.MODEL__MOVE_COMMANDS:
+      case BoundingBoxPackage.WORLD__MOVE_COMMANDS:
         return ((InternalEList<?>)getMoveCommands()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -107,7 +107,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case BoundingBoxPackage.MODEL__MOVE_COMMANDS:
+      case BoundingBoxPackage.WORLD__MOVE_COMMANDS:
         return getMoveCommands();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -124,7 +124,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case BoundingBoxPackage.MODEL__MOVE_COMMANDS:
+      case BoundingBoxPackage.WORLD__MOVE_COMMANDS:
         getMoveCommands().clear();
         getMoveCommands().addAll((Collection<? extends Move>)newValue);
         return;
@@ -142,7 +142,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case BoundingBoxPackage.MODEL__MOVE_COMMANDS:
+      case BoundingBoxPackage.WORLD__MOVE_COMMANDS:
         getMoveCommands().clear();
         return;
     }
@@ -159,10 +159,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case BoundingBoxPackage.MODEL__MOVE_COMMANDS:
+      case BoundingBoxPackage.WORLD__MOVE_COMMANDS:
         return moveCommands != null && !moveCommands.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ModelImpl
+} //WorldImpl

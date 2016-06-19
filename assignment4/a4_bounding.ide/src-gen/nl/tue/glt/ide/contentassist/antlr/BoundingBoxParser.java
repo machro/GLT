@@ -38,12 +38,12 @@ public class BoundingBoxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMoveAccess().getAlternatives(), "rule__Move__Alternatives");
 					put(grammarAccess.getMoveXAccess().getAlternatives(), "rule__MoveX__Alternatives");
 					put(grammarAccess.getMoveYAccess().getAlternatives(), "rule__MoveY__Alternatives");
-					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+					put(grammarAccess.getWorldAccess().getGroup(), "rule__World__Group__0");
 					put(grammarAccess.getMoveLeftAccess().getGroup(), "rule__MoveLeft__Group__0");
 					put(grammarAccess.getMoveRightAccess().getGroup(), "rule__MoveRight__Group__0");
 					put(grammarAccess.getMoveUpAccess().getGroup(), "rule__MoveUp__Group__0");
 					put(grammarAccess.getMoveDownAccess().getGroup(), "rule__MoveDown__Group__0");
-					put(grammarAccess.getModelAccess().getMoveCommandsAssignment_2(), "rule__Model__MoveCommandsAssignment_2");
+					put(grammarAccess.getWorldAccess().getMoveCommandsAssignment_2(), "rule__World__MoveCommandsAssignment_2");
 					put(grammarAccess.getMoveLeftAccess().getDistanceAssignment_1(), "rule__MoveLeft__DistanceAssignment_1");
 					put(grammarAccess.getMoveRightAccess().getDistanceAssignment_1(), "rule__MoveRight__DistanceAssignment_1");
 					put(grammarAccess.getMoveUpAccess().getDistanceAssignment_1(), "rule__MoveUp__DistanceAssignment_1");
@@ -58,7 +58,7 @@ public class BoundingBoxParser extends AbstractContentAssistParser {
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			InternalBoundingBoxParser typedParser = (InternalBoundingBoxParser) parser;
-			typedParser.entryRuleModel();
+			typedParser.entryRuleWorld();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);

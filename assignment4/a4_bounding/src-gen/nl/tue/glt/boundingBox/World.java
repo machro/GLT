@@ -9,21 +9,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Model</b></em>'.
+ * A representation of the model object '<em><b>World</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link nl.tue.glt.boundingBox.Model#getMoveCommands <em>Move Commands</em>}</li>
+ *   <li>{@link nl.tue.glt.boundingBox.World#getMoveCommands <em>Move Commands</em>}</li>
  * </ul>
  *
- * @see nl.tue.glt.boundingBox.BoundingBoxPackage#getModel()
+ * @see nl.tue.glt.boundingBox.BoundingBoxPackage#getWorld()
  * @model
  * @generated
  */
-public interface Model extends EObject
+public interface World extends EObject
 {
   /**
    * Returns the value of the '<em><b>Move Commands</b></em>' containment reference list.
@@ -35,10 +35,10 @@ public interface Model extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Move Commands</em>' containment reference list.
-   * @see nl.tue.glt.boundingBox.BoundingBoxPackage#getModel_MoveCommands()
+   * @see nl.tue.glt.boundingBox.BoundingBoxPackage#getWorld_MoveCommands()
    * @model containment="true"
    * @generated
    */
   EList<Move> getMoveCommands();
 
-} // Model
+} // World

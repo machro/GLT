@@ -47,11 +47,14 @@ public class World {
   
   public static void main(String... args) {
     World world = new World();
-    world.addMove(new MoveUp(10));
-    world.addMove(new MoveLeft(50));
-    world.addMove(new MoveDown(10));
-    world.addMove(new MoveRight(30));
-    world.addMove(new MoveUp(30));
+    [%
+    	for (move in world.moveCommands) { 
+    		%]
+			world.addMove(new [%= move.eClass.name %]([%= move.distance %]));
+			[%
+		}
+	%]
+    
     int[] xBounds = world.xBounds();
     int[] yBounds = world.yBounds();
     System.out.println("("+ xBounds[0] + ", "+ yBounds[0] + ")");

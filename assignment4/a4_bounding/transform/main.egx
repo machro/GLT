@@ -1,0 +1,7 @@
+rule Library2Page 
+	transform world : World {
+	
+	template : "bounding2java.egl"
+	
+	target : "World.java"
+}

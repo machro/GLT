@@ -5,7 +5,6 @@ package nl.tue.glt.boundingBox.impl;
 
 import nl.tue.glt.boundingBox.BoundingBoxFactory;
 import nl.tue.glt.boundingBox.BoundingBoxPackage;
-import nl.tue.glt.boundingBox.Model;
 import nl.tue.glt.boundingBox.Move;
 import nl.tue.glt.boundingBox.MoveDown;
 import nl.tue.glt.boundingBox.MoveLeft;
@@ -13,6 +12,7 @@ import nl.tue.glt.boundingBox.MoveRight;
 import nl.tue.glt.boundingBox.MoveUp;
 import nl.tue.glt.boundingBox.MoveX;
 import nl.tue.glt.boundingBox.MoveY;
+import nl.tue.glt.boundingBox.World;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -34,7 +34,7 @@ public class BoundingBoxPackageImpl extends EPackageImpl implements BoundingBoxP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass modelEClass = null;
+  private EClass worldEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -153,9 +153,9 @@ public class BoundingBoxPackageImpl extends EPackageImpl implements BoundingBoxP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getModel()
+  public EClass getWorld()
   {
-    return modelEClass;
+    return worldEClass;
   }
 
   /**
@@ -163,9 +163,9 @@ public class BoundingBoxPackageImpl extends EPackageImpl implements BoundingBoxP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_MoveCommands()
+  public EReference getWorld_MoveCommands()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+    return (EReference)worldEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -278,8 +278,8 @@ public class BoundingBoxPackageImpl extends EPackageImpl implements BoundingBoxP
     isCreated = true;
 
     // Create classes and their features
-    modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__MOVE_COMMANDS);
+    worldEClass = createEClass(WORLD);
+    createEReference(worldEClass, WORLD__MOVE_COMMANDS);
 
     moveEClass = createEClass(MOVE);
     createEAttribute(moveEClass, MOVE__DISTANCE);
@@ -334,8 +334,8 @@ public class BoundingBoxPackageImpl extends EPackageImpl implements BoundingBoxP
     moveDownEClass.getESuperTypes().add(this.getMoveY());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_MoveCommands(), this.getMove(), null, "moveCommands", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(worldEClass, World.class, "World", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWorld_MoveCommands(), this.getMove(), null, "moveCommands", null, 0, -1, World.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(moveEClass, Move.class, "Move", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMove_Distance(), ecorePackage.getEInt(), "distance", null, 0, 1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -6,8 +6,8 @@
     copyrightFields="false" runtimeVersion="2.11">
   <genPackages prefix="BoundingBox" basePackage="nl.tue.glt" disposableProviderFactory="true"
       fileExtensions="boundingdsl" ecorePackage="BoundingBox.ecore#/">
-    <genClasses ecoreClass="BoundingBox.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BoundingBox.ecore#//Model/moveCommands"/>
+    <genClasses ecoreClass="BoundingBox.ecore#//World">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BoundingBox.ecore#//World/moveCommands"/>
     </genClasses>
     <genClasses ecoreClass="BoundingBox.ecore#//Move">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BoundingBox.ecore#//Move/distance"/>

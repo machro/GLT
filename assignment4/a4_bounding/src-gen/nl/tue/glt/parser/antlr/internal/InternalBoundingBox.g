@@ -43,7 +43,7 @@ import nl.tue.glt.services.BoundingBoxGrammarAccess;
 
     @Override
     protected String getFirstRuleName() {
-    	return "Model";
+    	return "World";
    	}
 
    	@Override
@@ -60,15 +60,15 @@ import nl.tue.glt.services.BoundingBoxGrammarAccess;
     }
 }
 
-// Entry rule entryRuleModel
-entryRuleModel returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getModelRule()); }
-	iv_ruleModel=ruleModel
-	{ $current=$iv_ruleModel.current; }
+// Entry rule entryRuleWorld
+entryRuleWorld returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWorldRule()); }
+	iv_ruleWorld=ruleWorld
+	{ $current=$iv_ruleWorld.current; }
 	EOF;
 
-// Rule Model
-ruleModel returns [EObject current=null]
+// Rule World
+ruleWorld returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -79,23 +79,23 @@ ruleModel returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getModelAccess().getModelAction_0(),
+					grammarAccess.getWorldAccess().getWorldAction_0(),
 					$current);
 			}
 		)
 		otherlv_1='Box:'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getModelAccess().getBoxKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getWorldAccess().getBoxKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getMoveCommandsMoveParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getWorldAccess().getMoveCommandsMoveParserRuleCall_2_0());
 				}
 				lv_moveCommands_2_0=ruleMove
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
+						$current = createModelElementForParent(grammarAccess.getWorldRule());
 					}
 					add(
 						$current,

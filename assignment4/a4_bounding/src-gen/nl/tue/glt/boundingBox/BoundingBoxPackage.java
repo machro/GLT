@@ -58,14 +58,14 @@ public interface BoundingBoxPackage extends EPackage
   BoundingBoxPackage eINSTANCE = nl.tue.glt.boundingBox.impl.BoundingBoxPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link nl.tue.glt.boundingBox.impl.ModelImpl <em>Model</em>}' class.
+   * The meta object id for the '{@link nl.tue.glt.boundingBox.impl.WorldImpl <em>World</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see nl.tue.glt.boundingBox.impl.ModelImpl
-   * @see nl.tue.glt.boundingBox.impl.BoundingBoxPackageImpl#getModel()
+   * @see nl.tue.glt.boundingBox.impl.WorldImpl
+   * @see nl.tue.glt.boundingBox.impl.BoundingBoxPackageImpl#getWorld()
    * @generated
    */
-  int MODEL = 0;
+  int WORLD = 0;
 
   /**
    * The feature id for the '<em><b>Move Commands</b></em>' containment reference list.
@@ -74,16 +74,16 @@ public interface BoundingBoxPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__MOVE_COMMANDS = 0;
+  int WORLD__MOVE_COMMANDS = 0;
 
   /**
-   * The number of structural features of the '<em>Model</em>' class.
+   * The number of structural features of the '<em>World</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 1;
+  int WORLD_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link nl.tue.glt.boundingBox.impl.MoveImpl <em>Move</em>}' class.
@@ -283,25 +283,25 @@ public interface BoundingBoxPackage extends EPackage
 
 
   /**
-   * Returns the meta object for class '{@link nl.tue.glt.boundingBox.Model <em>Model</em>}'.
+   * Returns the meta object for class '{@link nl.tue.glt.boundingBox.World <em>World</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Model</em>'.
-   * @see nl.tue.glt.boundingBox.Model
+   * @return the meta object for class '<em>World</em>'.
+   * @see nl.tue.glt.boundingBox.World
    * @generated
    */
-  EClass getModel();
+  EClass getWorld();
 
   /**
-   * Returns the meta object for the containment reference list '{@link nl.tue.glt.boundingBox.Model#getMoveCommands <em>Move Commands</em>}'.
+   * Returns the meta object for the containment reference list '{@link nl.tue.glt.boundingBox.World#getMoveCommands <em>Move Commands</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Move Commands</em>'.
-   * @see nl.tue.glt.boundingBox.Model#getMoveCommands()
-   * @see #getModel()
+   * @see nl.tue.glt.boundingBox.World#getMoveCommands()
+   * @see #getWorld()
    * @generated
    */
-  EReference getModel_MoveCommands();
+  EReference getWorld_MoveCommands();
 
   /**
    * Returns the meta object for class '{@link nl.tue.glt.boundingBox.Move <em>Move</em>}'.
@@ -408,14 +408,14 @@ public interface BoundingBoxPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link nl.tue.glt.boundingBox.impl.ModelImpl <em>Model</em>}' class.
+     * The meta object literal for the '{@link nl.tue.glt.boundingBox.impl.WorldImpl <em>World</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see nl.tue.glt.boundingBox.impl.ModelImpl
-     * @see nl.tue.glt.boundingBox.impl.BoundingBoxPackageImpl#getModel()
+     * @see nl.tue.glt.boundingBox.impl.WorldImpl
+     * @see nl.tue.glt.boundingBox.impl.BoundingBoxPackageImpl#getWorld()
      * @generated
      */
-    EClass MODEL = eINSTANCE.getModel();
+    EClass WORLD = eINSTANCE.getWorld();
 
     /**
      * The meta object literal for the '<em><b>Move Commands</b></em>' containment reference list feature.
@@ -423,7 +423,7 @@ public interface BoundingBoxPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__MOVE_COMMANDS = eINSTANCE.getModel_MoveCommands();
+    EReference WORLD__MOVE_COMMANDS = eINSTANCE.getWorld_MoveCommands();
 
     /**
      * The meta object literal for the '{@link nl.tue.glt.boundingBox.impl.MoveImpl <em>Move</em>}' class.
