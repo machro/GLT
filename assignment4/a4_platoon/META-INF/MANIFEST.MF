@@ -26,4 +26,8 @@ Export-Package: nl.tue.glt.platoon.impl,
  nl.tue.glt.validation,
  nl.tue.glt.platoon,
  nl.tue.glt.generator
-Import-Package: org.apache.log4j
+Import-Package: org.apache.log4j,
+ org.eclipse.epsilon.eol,
+ org.eclipse.epsilon.eol.exceptions.models,
+ org.eclipse.epsilon.eol.execute.context,
+ org.eclipse.epsilon.eol.models

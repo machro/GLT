@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<platoon:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:platoon="http://www.tue.nl/glt/Platoon">
+  <platoons>
+    <first name="Lego0" route="//@routes"/>
+    <followers name="Lego1" pulledBy="//@platoons/@first"/>
+    <followers name="Lego2" pulledBy="//@platoons/@followers.0"/>
+    <followers name="Lego3" pulledBy="//@platoons/@followers.0"/>
+    <followers name="Lego4" pulledBy="//@platoons/@followers.1"/>
+  </platoons>
+  <routes name="R1">
+    <actions xsi:type="platoon:Forward" distance="10"/>
+    <actions xsi:type="platoon:Left"/>
+    <actions xsi:type="platoon:Forward" distance="50"/>
+    <actions xsi:type="platoon:Right"/>
+  </routes>
+  <constraints minHeadway="20" maxHeadway="30"/>
+</platoon:Model>

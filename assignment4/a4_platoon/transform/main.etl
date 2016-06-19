@@ -1,0 +1,52 @@
+pre {
+  "Running ETL".println();
+}
+rule b2p 
+	transform route : Platoon!Route
+	to world : BoundingBox!World {
+	
+	var direction = "up";
+	
+	for (action in route.actions) {
+		switch (action.eClass.name) {
+			case "Forward":
+				var step;
+				
+				if (direction.equals("up")) {
+					step = new BoundingBox!MoveUp;
+				} else if (direction.equals("down")) {
+					step = new BoundingBox!MoveDown;
+				} else if (direction.equals("left")) {
+					step = new BoundingBox!MoveLeft;
+				} else {
+					step = new BoundingBox!MoveRight;
+				}
+				
+				step.distance = action.distance;
+				world.moveCommands.add(step); 
+			break;
+			case "Left":
+				if (direction.equals("up")) {
+					direction = "left";
+				} else if (direction.equals("down")) {
+					direction = "right";
+				} else if (direction.equals("left")) {
+					direction = "down";
+				} else {
+					direction = "up";
+				}
+			break;
+			case "Right":
+				if (direction.equals("up")) {
+					direction = "right";
+				} else if (direction.equals("down")) {
+					direction = "left";
+				} else if (direction.equals("left")) {
+					direction = "up";
+				} else {
+					direction = "down";
+				}
+			break;
+		}
+	}
+}
