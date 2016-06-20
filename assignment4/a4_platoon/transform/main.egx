@@ -1,0 +1,7 @@
+rule p2nxc 
+	transform m : Model {
+	
+	template : "main.egl"
+	
+	target : "../output/Platoon.nxc"
+}

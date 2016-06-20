@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.resource.XtextResourceSet;
 
+import com.google.common.io.Files;
 import com.google.inject.Injector;
 
 public class App {
@@ -27,7 +28,7 @@ public class App {
 		Injector injector = (Injector) (new BoundingBoxStandaloneSetup()
 	            .createInjectorAndDoEMFRegistration());
 	    XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
-	    String inputURI = getPath("transform/bounding.boundingdsl");
+	    String inputURI = getPath("transform/input.boundingdsl");
 	    String outputURI = getPath("transform/bounding.xmi");
 
 	    URI uri = URI.createURI(inputURI);
@@ -65,6 +66,10 @@ public class App {
 		module.getContext().getModelRepository().addModel(model);
 		// ... and execute
 		module.execute();
+		
+		new File(getPath("transform/bounding.xmi")).delete();
+		Files.copy(new File(getPath("model/generated/BoundingBox.ecore")), new File(getPath("../a4_platoon/model/BoundingBox.ecore")));
+		System.out.println("Finished! The java code is created in the /output folder.");
 	}
 	
 }
