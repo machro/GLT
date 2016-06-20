@@ -1,0 +1,195 @@
+#define DST_MULTIPLIER 100
+#define TURNTIME       500
+
+#define NORMAL_SPEED 75
+#define FAST_SPEED   90
+#define TURN_SPEED   50
+
+#define MSG_NULL    0
+#define MSG_CONNECT 1
+#define MSG_LEFT    2
+#define MSG_RIGHT   3
+
+#define MIN_HEADWAY 20
+#define MAX_HEADWAY 30
+
+#ifndef __AUTOCONNECT_LIB__NXC
+#define __AUTOCONNECT_LIB__NXC
+
+// The master tries to connect to the slave "name".
+void ConnectNXT(const string name, byte channel)
+{
+	CommBTConnectionType args;
+	args.Name = name;
+	args.ConnectionSlot = channel;
+	args.Action = TRUE;
+	
+	if(!BluetoothStatus(channel) == NO_ERR)
+	{
+		SysCommBTConnection(args); // try to connect.
+		Wait(5000); // let the connection get created
+	}
+}
+
+#endif
+
+int lastMessage = MSG_NULL;
+int numSlaves;
+
+void send(int channel, int msg)
+{
+  int ack = 0;
+  SendRemoteNumber(channel, 1, msg)
+  until(ack == 0xFF)
+  {
+    until(ReceiveRemoteNumber(5, true, ack) == NO_ERR);
+  }
+}
+
+int receive()
+{
+  int msg = MSG_NULL;
+  if(ReceiveRemoteNumber(1, true, msg) != STAT_MSG_EMPTY_MAILBOX)
+  {
+    SendResponseNumber(5, 0xFF);
+  }
+  return msg;
+}
+
+void letSlaveConnect(int channel)
+{
+  send(channel, MSG_CONNECT);
+}
+
+void connectToSlaves()
+{
+ConnectNXT("Lego1", 1);ConnectNXT("Lego2", 2);ConnectNXT("Lego3", 3);ConnectNXT("Lego4", 4);  numSlaves = 4;
+
+  int channel = 0;
+  repeat(numSlaves)
+  {
+    channel += 1;
+    letSlaveConnect(channel);
+  }
+}
+
+void waitForConnection()
+{
+  if(receive() == MSG_CONNECT)
+  {
+    connectToSlaves();
+  }
+  else
+  {
+    TextOut(0,LCD_LINE1,"Unexpected message");
+  }
+}
+
+void letSlaveTurnLeft(int channel)
+{
+  send(channel, MSG_LEFT);
+}
+
+void letSlaveTurnRight(int channel)
+{
+  send(channel, MSG_RIGHT);
+}
+
+void move(int distance)
+{
+  OnFwd(OUT_AC, NORMAL_SPEED);
+  Wait(distance*DST_MULTIPLIER);
+  Off(OUT_AC);
+}
+
+void left()
+{
+  int channel = 0;
+  repeat(numSlaves)
+  {
+    channel += 1;
+    letSlaveTurnLeft(channel);
+  }
+  
+  OnFwd(OUT_A, TURN_SPEED);
+  OnRev(OUT_C, TURN_SPEED);
+  Wait(TURNTIME);
+  Off(OUT_AC);
+}
+
+void right()
+{
+  int channel = 0;
+  repeat(numSlaves)
+  {
+    channel += 1;
+    letSlaveTurnRight(channel);
+  }
+  
+  OnFwd(OUT_C, TURN_SPEED);
+  OnRev(OUT_A, TURN_SPEED);
+  Wait(TURNTIME);
+  Off(OUT_AC);
+}
+
+void executeCommand()
+{
+  if(lastMessage == MSG_LEFT)
+  {
+    left();
+  }
+  else { if(lastMessage == MSG_RIGHT)
+  {
+    right();
+  }
+  else
+  {
+    TextOut(0,LCD_LINE1,"Unexpected message");
+  }}
+}
+
+task keepDistance()
+{
+  while(true)
+  {
+    SetSensorLowspeed(IN_4);
+    int headway = SensorUS(IN_4);
+    
+    if(headway > MAX_HEADWAY)
+    {
+      if(lastMessage != MSG_NULL)
+      {
+        executeCommand();
+      }
+      else
+      {
+        OnFwd(OUT_AC, FAST_SPEED); // distance too large, speed up a little
+      }
+    }
+    else { if(headway < MIN_HEADWAY)
+    {
+      Off(OUT_AC);
+    }
+    else
+    {
+      OnFwd(OUT_AC, NORMAL_SPEED);
+    }}
+  }
+}
+
+task listenToCommands()
+{
+  while(true)
+  {
+    lastMessage = receive();
+  }
+}
+
+task main()
+{
+  
+  connectToSlaves();
+move(10);left();move(50);right();      waitForConnection();
+      connectToSlaves();
+      Precedes(keepDistance, listenToCommands);
+}

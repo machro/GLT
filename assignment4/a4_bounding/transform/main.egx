@@ -1,7 +1,7 @@
-rule Library2Page 
+rule b2j
 	transform world : World {
 	
 	template : "bounding2java.egl"
 	
-	target : "World.java"
+	target : "../output/World.java"
 }

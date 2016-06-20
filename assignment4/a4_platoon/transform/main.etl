@@ -1,6 +1,3 @@
-pre {
-  "Running ETL".println();
-}
 rule b2p 
 	transform route : Platoon!Route
 	to world : BoundingBox!World {
