@@ -28,16 +28,17 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cWorldAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cBoxKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cMoveCommandsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cMoveCommandsMoveParserRuleCall_2_0 = (RuleCall)cMoveCommandsAssignment_2.eContents().get(0);
+		private final Keyword cControl000aKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cMoveCommandsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cMoveCommandsMoveParserRuleCall_3_0 = (RuleCall)cMoveCommandsAssignment_3.eContents().get(0);
 		
 		//World:
 		//	{World}
-		//	'Box:'
+		//	'Box:' '\n'
 		//	moveCommands+=Move*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{World} 'Box:' moveCommands+=Move*
+		//{World} 'Box:' '\n' moveCommands+=Move*
 		public Group getGroup() { return cGroup; }
 		
 		//{World}
@@ -46,11 +47,14 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 		//'Box:'
 		public Keyword getBoxKeyword_1() { return cBoxKeyword_1; }
 		
+		//'\n'
+		public Keyword getControl000aKeyword_2() { return cControl000aKeyword_2; }
+		
 		//moveCommands+=Move*
-		public Assignment getMoveCommandsAssignment_2() { return cMoveCommandsAssignment_2; }
+		public Assignment getMoveCommandsAssignment_3() { return cMoveCommandsAssignment_3; }
 		
 		//Move
-		public RuleCall getMoveCommandsMoveParserRuleCall_2_0() { return cMoveCommandsMoveParserRuleCall_2_0; }
+		public RuleCall getMoveCommandsMoveParserRuleCall_3_0() { return cMoveCommandsMoveParserRuleCall_3_0; }
 	}
 	public class MoveElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.glt.BoundingBox.Move");
@@ -115,12 +119,13 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cDistanceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cDistanceINTTerminalRuleCall_1_0 = (RuleCall)cDistanceAssignment_1.eContents().get(0);
+		private final Keyword cControl000aKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//MoveLeft:
-		//	'left' distance=INT;
+		//	'left' distance=INT '\n';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'left' distance=INT
+		//'left' distance=INT '\n'
 		public Group getGroup() { return cGroup; }
 		
 		//'left'
@@ -131,6 +136,9 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//INT
 		public RuleCall getDistanceINTTerminalRuleCall_1_0() { return cDistanceINTTerminalRuleCall_1_0; }
+		
+		//'\n'
+		public Keyword getControl000aKeyword_2() { return cControl000aKeyword_2; }
 	}
 	public class MoveRightElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.glt.BoundingBox.MoveRight");
@@ -138,12 +146,13 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cDistanceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cDistanceINTTerminalRuleCall_1_0 = (RuleCall)cDistanceAssignment_1.eContents().get(0);
+		private final Keyword cControl000aKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//MoveRight:
-		//	'right' distance=INT;
+		//	'right' distance=INT '\n';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'right' distance=INT
+		//'right' distance=INT '\n'
 		public Group getGroup() { return cGroup; }
 		
 		//'right'
@@ -154,6 +163,9 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//INT
 		public RuleCall getDistanceINTTerminalRuleCall_1_0() { return cDistanceINTTerminalRuleCall_1_0; }
+		
+		//'\n'
+		public Keyword getControl000aKeyword_2() { return cControl000aKeyword_2; }
 	}
 	public class MoveUpElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.glt.BoundingBox.MoveUp");
@@ -161,12 +173,13 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cUpKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cDistanceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cDistanceINTTerminalRuleCall_1_0 = (RuleCall)cDistanceAssignment_1.eContents().get(0);
+		private final Keyword cControl000aKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//MoveUp:
-		//	'up' distance=INT;
+		//	'up' distance=INT '\n';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'up' distance=INT
+		//'up' distance=INT '\n'
 		public Group getGroup() { return cGroup; }
 		
 		//'up'
@@ -177,6 +190,9 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//INT
 		public RuleCall getDistanceINTTerminalRuleCall_1_0() { return cDistanceINTTerminalRuleCall_1_0; }
+		
+		//'\n'
+		public Keyword getControl000aKeyword_2() { return cControl000aKeyword_2; }
 	}
 	public class MoveDownElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.glt.BoundingBox.MoveDown");
@@ -184,12 +200,13 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDownKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cDistanceAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cDistanceINTTerminalRuleCall_1_0 = (RuleCall)cDistanceAssignment_1.eContents().get(0);
+		private final Keyword cControl000aKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//MoveDown:
-		//	'down' distance=INT;
+		//	'down' distance=INT '\n';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'down' distance=INT
+		//'down' distance=INT '\n'
 		public Group getGroup() { return cGroup; }
 		
 		//'down'
@@ -200,6 +217,9 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//INT
 		public RuleCall getDistanceINTTerminalRuleCall_1_0() { return cDistanceINTTerminalRuleCall_1_0; }
+		
+		//'\n'
+		public Keyword getControl000aKeyword_2() { return cControl000aKeyword_2; }
 	}
 	
 	
@@ -260,7 +280,7 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//World:
 	//	{World}
-	//	'Box:'
+	//	'Box:' '\n'
 	//	moveCommands+=Move*;
 	public WorldElements getWorldAccess() {
 		return pWorld;
@@ -301,7 +321,7 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MoveLeft:
-	//	'left' distance=INT;
+	//	'left' distance=INT '\n';
 	public MoveLeftElements getMoveLeftAccess() {
 		return pMoveLeft;
 	}
@@ -311,7 +331,7 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MoveRight:
-	//	'right' distance=INT;
+	//	'right' distance=INT '\n';
 	public MoveRightElements getMoveRightAccess() {
 		return pMoveRight;
 	}
@@ -321,7 +341,7 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MoveUp:
-	//	'up' distance=INT;
+	//	'up' distance=INT '\n';
 	public MoveUpElements getMoveUpAccess() {
 		return pMoveUp;
 	}
@@ -331,7 +351,7 @@ public class BoundingBoxGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MoveDown:
-	//	'down' distance=INT;
+	//	'down' distance=INT '\n';
 	public MoveDownElements getMoveDownAccess() {
 		return pMoveDown;
 	}

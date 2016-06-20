@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Box:'", "'left'", "'right'", "'up'", "'down'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Box:'", "'\\n'", "'left'", "'right'", "'up'", "'down'"
     };
     public static final int RULE_ID=5;
     public static final int RULE_WS=9;
@@ -29,6 +29,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__15=15;
+    public static final int T__16=16;
     public static final int RULE_INT=4;
     public static final int T__11=11;
     public static final int RULE_ML_COMMENT=7;
@@ -113,23 +114,24 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWorld"
-    // InternalBoundingBox.g:71:1: ruleWorld returns [EObject current=null] : ( () otherlv_1= 'Box:' ( (lv_moveCommands_2_0= ruleMove ) )* ) ;
+    // InternalBoundingBox.g:71:1: ruleWorld returns [EObject current=null] : ( () otherlv_1= 'Box:' otherlv_2= '\\n' ( (lv_moveCommands_3_0= ruleMove ) )* ) ;
     public final EObject ruleWorld() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        EObject lv_moveCommands_2_0 = null;
+        Token otherlv_2=null;
+        EObject lv_moveCommands_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalBoundingBox.g:77:2: ( ( () otherlv_1= 'Box:' ( (lv_moveCommands_2_0= ruleMove ) )* ) )
-            // InternalBoundingBox.g:78:2: ( () otherlv_1= 'Box:' ( (lv_moveCommands_2_0= ruleMove ) )* )
+            // InternalBoundingBox.g:77:2: ( ( () otherlv_1= 'Box:' otherlv_2= '\\n' ( (lv_moveCommands_3_0= ruleMove ) )* ) )
+            // InternalBoundingBox.g:78:2: ( () otherlv_1= 'Box:' otherlv_2= '\\n' ( (lv_moveCommands_3_0= ruleMove ) )* )
             {
-            // InternalBoundingBox.g:78:2: ( () otherlv_1= 'Box:' ( (lv_moveCommands_2_0= ruleMove ) )* )
-            // InternalBoundingBox.g:79:3: () otherlv_1= 'Box:' ( (lv_moveCommands_2_0= ruleMove ) )*
+            // InternalBoundingBox.g:78:2: ( () otherlv_1= 'Box:' otherlv_2= '\\n' ( (lv_moveCommands_3_0= ruleMove ) )* )
+            // InternalBoundingBox.g:79:3: () otherlv_1= 'Box:' otherlv_2= '\\n' ( (lv_moveCommands_3_0= ruleMove ) )*
             {
             // InternalBoundingBox.g:79:3: ()
             // InternalBoundingBox.g:80:4: 
@@ -146,29 +148,33 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getWorldAccess().getBoxKeyword_1());
             		
-            // InternalBoundingBox.g:90:3: ( (lv_moveCommands_2_0= ruleMove ) )*
+            otherlv_2=(Token)match(input,12,FOLLOW_4); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getWorldAccess().getControl000aKeyword_2());
+            		
+            // InternalBoundingBox.g:94:3: ( (lv_moveCommands_3_0= ruleMove ) )*
             loop1:
             do {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=12 && LA1_0<=15)) ) {
+                if ( ((LA1_0>=13 && LA1_0<=16)) ) {
                     alt1=1;
                 }
 
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalBoundingBox.g:91:4: (lv_moveCommands_2_0= ruleMove )
+            	    // InternalBoundingBox.g:95:4: (lv_moveCommands_3_0= ruleMove )
             	    {
-            	    // InternalBoundingBox.g:91:4: (lv_moveCommands_2_0= ruleMove )
-            	    // InternalBoundingBox.g:92:5: lv_moveCommands_2_0= ruleMove
+            	    // InternalBoundingBox.g:95:4: (lv_moveCommands_3_0= ruleMove )
+            	    // InternalBoundingBox.g:96:5: lv_moveCommands_3_0= ruleMove
             	    {
 
-            	    					newCompositeNode(grammarAccess.getWorldAccess().getMoveCommandsMoveParserRuleCall_2_0());
+            	    					newCompositeNode(grammarAccess.getWorldAccess().getMoveCommandsMoveParserRuleCall_3_0());
             	    				
-            	    pushFollow(FOLLOW_3);
-            	    lv_moveCommands_2_0=ruleMove();
+            	    pushFollow(FOLLOW_4);
+            	    lv_moveCommands_3_0=ruleMove();
 
             	    state._fsp--;
 
@@ -179,7 +185,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
             	    					add(
             	    						current,
             	    						"moveCommands",
-            	    						lv_moveCommands_2_0,
+            	    						lv_moveCommands_3_0,
             	    						"nl.tue.glt.BoundingBox.Move");
             	    					afterParserOrEnumRuleCall();
             	    				
@@ -218,7 +224,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMove"
-    // InternalBoundingBox.g:113:1: entryRuleMove returns [EObject current=null] : iv_ruleMove= ruleMove EOF ;
+    // InternalBoundingBox.g:117:1: entryRuleMove returns [EObject current=null] : iv_ruleMove= ruleMove EOF ;
     public final EObject entryRuleMove() throws RecognitionException {
         EObject current = null;
 
@@ -226,8 +232,8 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBoundingBox.g:113:45: (iv_ruleMove= ruleMove EOF )
-            // InternalBoundingBox.g:114:2: iv_ruleMove= ruleMove EOF
+            // InternalBoundingBox.g:117:45: (iv_ruleMove= ruleMove EOF )
+            // InternalBoundingBox.g:118:2: iv_ruleMove= ruleMove EOF
             {
              newCompositeNode(grammarAccess.getMoveRule()); 
             pushFollow(FOLLOW_1);
@@ -254,7 +260,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMove"
-    // InternalBoundingBox.g:120:1: ruleMove returns [EObject current=null] : (this_MoveX_0= ruleMoveX | this_MoveY_1= ruleMoveY ) ;
+    // InternalBoundingBox.g:124:1: ruleMove returns [EObject current=null] : (this_MoveX_0= ruleMoveX | this_MoveY_1= ruleMoveY ) ;
     public final EObject ruleMove() throws RecognitionException {
         EObject current = null;
 
@@ -267,17 +273,17 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBoundingBox.g:126:2: ( (this_MoveX_0= ruleMoveX | this_MoveY_1= ruleMoveY ) )
-            // InternalBoundingBox.g:127:2: (this_MoveX_0= ruleMoveX | this_MoveY_1= ruleMoveY )
+            // InternalBoundingBox.g:130:2: ( (this_MoveX_0= ruleMoveX | this_MoveY_1= ruleMoveY ) )
+            // InternalBoundingBox.g:131:2: (this_MoveX_0= ruleMoveX | this_MoveY_1= ruleMoveY )
             {
-            // InternalBoundingBox.g:127:2: (this_MoveX_0= ruleMoveX | this_MoveY_1= ruleMoveY )
+            // InternalBoundingBox.g:131:2: (this_MoveX_0= ruleMoveX | this_MoveY_1= ruleMoveY )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( ((LA2_0>=12 && LA2_0<=13)) ) {
+            if ( ((LA2_0>=13 && LA2_0<=14)) ) {
                 alt2=1;
             }
-            else if ( ((LA2_0>=14 && LA2_0<=15)) ) {
+            else if ( ((LA2_0>=15 && LA2_0<=16)) ) {
                 alt2=2;
             }
             else {
@@ -288,7 +294,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalBoundingBox.g:128:3: this_MoveX_0= ruleMoveX
+                    // InternalBoundingBox.g:132:3: this_MoveX_0= ruleMoveX
                     {
 
                     			newCompositeNode(grammarAccess.getMoveAccess().getMoveXParserRuleCall_0());
@@ -306,7 +312,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalBoundingBox.g:137:3: this_MoveY_1= ruleMoveY
+                    // InternalBoundingBox.g:141:3: this_MoveY_1= ruleMoveY
                     {
 
                     			newCompositeNode(grammarAccess.getMoveAccess().getMoveYParserRuleCall_1());
@@ -346,7 +352,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMoveX"
-    // InternalBoundingBox.g:149:1: entryRuleMoveX returns [EObject current=null] : iv_ruleMoveX= ruleMoveX EOF ;
+    // InternalBoundingBox.g:153:1: entryRuleMoveX returns [EObject current=null] : iv_ruleMoveX= ruleMoveX EOF ;
     public final EObject entryRuleMoveX() throws RecognitionException {
         EObject current = null;
 
@@ -354,8 +360,8 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBoundingBox.g:149:46: (iv_ruleMoveX= ruleMoveX EOF )
-            // InternalBoundingBox.g:150:2: iv_ruleMoveX= ruleMoveX EOF
+            // InternalBoundingBox.g:153:46: (iv_ruleMoveX= ruleMoveX EOF )
+            // InternalBoundingBox.g:154:2: iv_ruleMoveX= ruleMoveX EOF
             {
              newCompositeNode(grammarAccess.getMoveXRule()); 
             pushFollow(FOLLOW_1);
@@ -382,7 +388,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMoveX"
-    // InternalBoundingBox.g:156:1: ruleMoveX returns [EObject current=null] : (this_MoveLeft_0= ruleMoveLeft | this_MoveRight_1= ruleMoveRight ) ;
+    // InternalBoundingBox.g:160:1: ruleMoveX returns [EObject current=null] : (this_MoveLeft_0= ruleMoveLeft | this_MoveRight_1= ruleMoveRight ) ;
     public final EObject ruleMoveX() throws RecognitionException {
         EObject current = null;
 
@@ -395,17 +401,17 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBoundingBox.g:162:2: ( (this_MoveLeft_0= ruleMoveLeft | this_MoveRight_1= ruleMoveRight ) )
-            // InternalBoundingBox.g:163:2: (this_MoveLeft_0= ruleMoveLeft | this_MoveRight_1= ruleMoveRight )
+            // InternalBoundingBox.g:166:2: ( (this_MoveLeft_0= ruleMoveLeft | this_MoveRight_1= ruleMoveRight ) )
+            // InternalBoundingBox.g:167:2: (this_MoveLeft_0= ruleMoveLeft | this_MoveRight_1= ruleMoveRight )
             {
-            // InternalBoundingBox.g:163:2: (this_MoveLeft_0= ruleMoveLeft | this_MoveRight_1= ruleMoveRight )
+            // InternalBoundingBox.g:167:2: (this_MoveLeft_0= ruleMoveLeft | this_MoveRight_1= ruleMoveRight )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==12) ) {
+            if ( (LA3_0==13) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==13) ) {
+            else if ( (LA3_0==14) ) {
                 alt3=2;
             }
             else {
@@ -416,7 +422,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalBoundingBox.g:164:3: this_MoveLeft_0= ruleMoveLeft
+                    // InternalBoundingBox.g:168:3: this_MoveLeft_0= ruleMoveLeft
                     {
 
                     			newCompositeNode(grammarAccess.getMoveXAccess().getMoveLeftParserRuleCall_0());
@@ -434,7 +440,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalBoundingBox.g:173:3: this_MoveRight_1= ruleMoveRight
+                    // InternalBoundingBox.g:177:3: this_MoveRight_1= ruleMoveRight
                     {
 
                     			newCompositeNode(grammarAccess.getMoveXAccess().getMoveRightParserRuleCall_1());
@@ -474,7 +480,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMoveY"
-    // InternalBoundingBox.g:185:1: entryRuleMoveY returns [EObject current=null] : iv_ruleMoveY= ruleMoveY EOF ;
+    // InternalBoundingBox.g:189:1: entryRuleMoveY returns [EObject current=null] : iv_ruleMoveY= ruleMoveY EOF ;
     public final EObject entryRuleMoveY() throws RecognitionException {
         EObject current = null;
 
@@ -482,8 +488,8 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBoundingBox.g:185:46: (iv_ruleMoveY= ruleMoveY EOF )
-            // InternalBoundingBox.g:186:2: iv_ruleMoveY= ruleMoveY EOF
+            // InternalBoundingBox.g:189:46: (iv_ruleMoveY= ruleMoveY EOF )
+            // InternalBoundingBox.g:190:2: iv_ruleMoveY= ruleMoveY EOF
             {
              newCompositeNode(grammarAccess.getMoveYRule()); 
             pushFollow(FOLLOW_1);
@@ -510,7 +516,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMoveY"
-    // InternalBoundingBox.g:192:1: ruleMoveY returns [EObject current=null] : (this_MoveUp_0= ruleMoveUp | this_MoveDown_1= ruleMoveDown ) ;
+    // InternalBoundingBox.g:196:1: ruleMoveY returns [EObject current=null] : (this_MoveUp_0= ruleMoveUp | this_MoveDown_1= ruleMoveDown ) ;
     public final EObject ruleMoveY() throws RecognitionException {
         EObject current = null;
 
@@ -523,17 +529,17 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalBoundingBox.g:198:2: ( (this_MoveUp_0= ruleMoveUp | this_MoveDown_1= ruleMoveDown ) )
-            // InternalBoundingBox.g:199:2: (this_MoveUp_0= ruleMoveUp | this_MoveDown_1= ruleMoveDown )
+            // InternalBoundingBox.g:202:2: ( (this_MoveUp_0= ruleMoveUp | this_MoveDown_1= ruleMoveDown ) )
+            // InternalBoundingBox.g:203:2: (this_MoveUp_0= ruleMoveUp | this_MoveDown_1= ruleMoveDown )
             {
-            // InternalBoundingBox.g:199:2: (this_MoveUp_0= ruleMoveUp | this_MoveDown_1= ruleMoveDown )
+            // InternalBoundingBox.g:203:2: (this_MoveUp_0= ruleMoveUp | this_MoveDown_1= ruleMoveDown )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==14) ) {
+            if ( (LA4_0==15) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==15) ) {
+            else if ( (LA4_0==16) ) {
                 alt4=2;
             }
             else {
@@ -544,7 +550,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalBoundingBox.g:200:3: this_MoveUp_0= ruleMoveUp
+                    // InternalBoundingBox.g:204:3: this_MoveUp_0= ruleMoveUp
                     {
 
                     			newCompositeNode(grammarAccess.getMoveYAccess().getMoveUpParserRuleCall_0());
@@ -562,7 +568,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalBoundingBox.g:209:3: this_MoveDown_1= ruleMoveDown
+                    // InternalBoundingBox.g:213:3: this_MoveDown_1= ruleMoveDown
                     {
 
                     			newCompositeNode(grammarAccess.getMoveYAccess().getMoveDownParserRuleCall_1());
@@ -602,7 +608,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMoveLeft"
-    // InternalBoundingBox.g:221:1: entryRuleMoveLeft returns [EObject current=null] : iv_ruleMoveLeft= ruleMoveLeft EOF ;
+    // InternalBoundingBox.g:225:1: entryRuleMoveLeft returns [EObject current=null] : iv_ruleMoveLeft= ruleMoveLeft EOF ;
     public final EObject entryRuleMoveLeft() throws RecognitionException {
         EObject current = null;
 
@@ -610,8 +616,8 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBoundingBox.g:221:49: (iv_ruleMoveLeft= ruleMoveLeft EOF )
-            // InternalBoundingBox.g:222:2: iv_ruleMoveLeft= ruleMoveLeft EOF
+            // InternalBoundingBox.g:225:49: (iv_ruleMoveLeft= ruleMoveLeft EOF )
+            // InternalBoundingBox.g:226:2: iv_ruleMoveLeft= ruleMoveLeft EOF
             {
              newCompositeNode(grammarAccess.getMoveLeftRule()); 
             pushFollow(FOLLOW_1);
@@ -638,34 +644,35 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMoveLeft"
-    // InternalBoundingBox.g:228:1: ruleMoveLeft returns [EObject current=null] : (otherlv_0= 'left' ( (lv_distance_1_0= RULE_INT ) ) ) ;
+    // InternalBoundingBox.g:232:1: ruleMoveLeft returns [EObject current=null] : (otherlv_0= 'left' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' ) ;
     public final EObject ruleMoveLeft() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_distance_1_0=null;
+        Token otherlv_2=null;
 
 
         	enterRule();
 
         try {
-            // InternalBoundingBox.g:234:2: ( (otherlv_0= 'left' ( (lv_distance_1_0= RULE_INT ) ) ) )
-            // InternalBoundingBox.g:235:2: (otherlv_0= 'left' ( (lv_distance_1_0= RULE_INT ) ) )
+            // InternalBoundingBox.g:238:2: ( (otherlv_0= 'left' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' ) )
+            // InternalBoundingBox.g:239:2: (otherlv_0= 'left' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' )
             {
-            // InternalBoundingBox.g:235:2: (otherlv_0= 'left' ( (lv_distance_1_0= RULE_INT ) ) )
-            // InternalBoundingBox.g:236:3: otherlv_0= 'left' ( (lv_distance_1_0= RULE_INT ) )
+            // InternalBoundingBox.g:239:2: (otherlv_0= 'left' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' )
+            // InternalBoundingBox.g:240:3: otherlv_0= 'left' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n'
             {
-            otherlv_0=(Token)match(input,12,FOLLOW_4); 
+            otherlv_0=(Token)match(input,13,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getMoveLeftAccess().getLeftKeyword_0());
             		
-            // InternalBoundingBox.g:240:3: ( (lv_distance_1_0= RULE_INT ) )
-            // InternalBoundingBox.g:241:4: (lv_distance_1_0= RULE_INT )
+            // InternalBoundingBox.g:244:3: ( (lv_distance_1_0= RULE_INT ) )
+            // InternalBoundingBox.g:245:4: (lv_distance_1_0= RULE_INT )
             {
-            // InternalBoundingBox.g:241:4: (lv_distance_1_0= RULE_INT )
-            // InternalBoundingBox.g:242:5: lv_distance_1_0= RULE_INT
+            // InternalBoundingBox.g:245:4: (lv_distance_1_0= RULE_INT )
+            // InternalBoundingBox.g:246:5: lv_distance_1_0= RULE_INT
             {
-            lv_distance_1_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            lv_distance_1_0=(Token)match(input,RULE_INT,FOLLOW_3); 
 
             					newLeafNode(lv_distance_1_0, grammarAccess.getMoveLeftAccess().getDistanceINTTerminalRuleCall_1_0());
             				
@@ -685,6 +692,10 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
             }
 
+            otherlv_2=(Token)match(input,12,FOLLOW_2); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getMoveLeftAccess().getControl000aKeyword_2());
+            		
 
             }
 
@@ -708,7 +719,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMoveRight"
-    // InternalBoundingBox.g:262:1: entryRuleMoveRight returns [EObject current=null] : iv_ruleMoveRight= ruleMoveRight EOF ;
+    // InternalBoundingBox.g:270:1: entryRuleMoveRight returns [EObject current=null] : iv_ruleMoveRight= ruleMoveRight EOF ;
     public final EObject entryRuleMoveRight() throws RecognitionException {
         EObject current = null;
 
@@ -716,8 +727,8 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBoundingBox.g:262:50: (iv_ruleMoveRight= ruleMoveRight EOF )
-            // InternalBoundingBox.g:263:2: iv_ruleMoveRight= ruleMoveRight EOF
+            // InternalBoundingBox.g:270:50: (iv_ruleMoveRight= ruleMoveRight EOF )
+            // InternalBoundingBox.g:271:2: iv_ruleMoveRight= ruleMoveRight EOF
             {
              newCompositeNode(grammarAccess.getMoveRightRule()); 
             pushFollow(FOLLOW_1);
@@ -744,34 +755,35 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMoveRight"
-    // InternalBoundingBox.g:269:1: ruleMoveRight returns [EObject current=null] : (otherlv_0= 'right' ( (lv_distance_1_0= RULE_INT ) ) ) ;
+    // InternalBoundingBox.g:277:1: ruleMoveRight returns [EObject current=null] : (otherlv_0= 'right' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' ) ;
     public final EObject ruleMoveRight() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_distance_1_0=null;
+        Token otherlv_2=null;
 
 
         	enterRule();
 
         try {
-            // InternalBoundingBox.g:275:2: ( (otherlv_0= 'right' ( (lv_distance_1_0= RULE_INT ) ) ) )
-            // InternalBoundingBox.g:276:2: (otherlv_0= 'right' ( (lv_distance_1_0= RULE_INT ) ) )
+            // InternalBoundingBox.g:283:2: ( (otherlv_0= 'right' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' ) )
+            // InternalBoundingBox.g:284:2: (otherlv_0= 'right' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' )
             {
-            // InternalBoundingBox.g:276:2: (otherlv_0= 'right' ( (lv_distance_1_0= RULE_INT ) ) )
-            // InternalBoundingBox.g:277:3: otherlv_0= 'right' ( (lv_distance_1_0= RULE_INT ) )
+            // InternalBoundingBox.g:284:2: (otherlv_0= 'right' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' )
+            // InternalBoundingBox.g:285:3: otherlv_0= 'right' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n'
             {
-            otherlv_0=(Token)match(input,13,FOLLOW_4); 
+            otherlv_0=(Token)match(input,14,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getMoveRightAccess().getRightKeyword_0());
             		
-            // InternalBoundingBox.g:281:3: ( (lv_distance_1_0= RULE_INT ) )
-            // InternalBoundingBox.g:282:4: (lv_distance_1_0= RULE_INT )
+            // InternalBoundingBox.g:289:3: ( (lv_distance_1_0= RULE_INT ) )
+            // InternalBoundingBox.g:290:4: (lv_distance_1_0= RULE_INT )
             {
-            // InternalBoundingBox.g:282:4: (lv_distance_1_0= RULE_INT )
-            // InternalBoundingBox.g:283:5: lv_distance_1_0= RULE_INT
+            // InternalBoundingBox.g:290:4: (lv_distance_1_0= RULE_INT )
+            // InternalBoundingBox.g:291:5: lv_distance_1_0= RULE_INT
             {
-            lv_distance_1_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            lv_distance_1_0=(Token)match(input,RULE_INT,FOLLOW_3); 
 
             					newLeafNode(lv_distance_1_0, grammarAccess.getMoveRightAccess().getDistanceINTTerminalRuleCall_1_0());
             				
@@ -791,6 +803,10 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
             }
 
+            otherlv_2=(Token)match(input,12,FOLLOW_2); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getMoveRightAccess().getControl000aKeyword_2());
+            		
 
             }
 
@@ -814,7 +830,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMoveUp"
-    // InternalBoundingBox.g:303:1: entryRuleMoveUp returns [EObject current=null] : iv_ruleMoveUp= ruleMoveUp EOF ;
+    // InternalBoundingBox.g:315:1: entryRuleMoveUp returns [EObject current=null] : iv_ruleMoveUp= ruleMoveUp EOF ;
     public final EObject entryRuleMoveUp() throws RecognitionException {
         EObject current = null;
 
@@ -822,8 +838,8 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBoundingBox.g:303:47: (iv_ruleMoveUp= ruleMoveUp EOF )
-            // InternalBoundingBox.g:304:2: iv_ruleMoveUp= ruleMoveUp EOF
+            // InternalBoundingBox.g:315:47: (iv_ruleMoveUp= ruleMoveUp EOF )
+            // InternalBoundingBox.g:316:2: iv_ruleMoveUp= ruleMoveUp EOF
             {
              newCompositeNode(grammarAccess.getMoveUpRule()); 
             pushFollow(FOLLOW_1);
@@ -850,34 +866,35 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMoveUp"
-    // InternalBoundingBox.g:310:1: ruleMoveUp returns [EObject current=null] : (otherlv_0= 'up' ( (lv_distance_1_0= RULE_INT ) ) ) ;
+    // InternalBoundingBox.g:322:1: ruleMoveUp returns [EObject current=null] : (otherlv_0= 'up' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' ) ;
     public final EObject ruleMoveUp() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_distance_1_0=null;
+        Token otherlv_2=null;
 
 
         	enterRule();
 
         try {
-            // InternalBoundingBox.g:316:2: ( (otherlv_0= 'up' ( (lv_distance_1_0= RULE_INT ) ) ) )
-            // InternalBoundingBox.g:317:2: (otherlv_0= 'up' ( (lv_distance_1_0= RULE_INT ) ) )
+            // InternalBoundingBox.g:328:2: ( (otherlv_0= 'up' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' ) )
+            // InternalBoundingBox.g:329:2: (otherlv_0= 'up' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' )
             {
-            // InternalBoundingBox.g:317:2: (otherlv_0= 'up' ( (lv_distance_1_0= RULE_INT ) ) )
-            // InternalBoundingBox.g:318:3: otherlv_0= 'up' ( (lv_distance_1_0= RULE_INT ) )
+            // InternalBoundingBox.g:329:2: (otherlv_0= 'up' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' )
+            // InternalBoundingBox.g:330:3: otherlv_0= 'up' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n'
             {
-            otherlv_0=(Token)match(input,14,FOLLOW_4); 
+            otherlv_0=(Token)match(input,15,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getMoveUpAccess().getUpKeyword_0());
             		
-            // InternalBoundingBox.g:322:3: ( (lv_distance_1_0= RULE_INT ) )
-            // InternalBoundingBox.g:323:4: (lv_distance_1_0= RULE_INT )
+            // InternalBoundingBox.g:334:3: ( (lv_distance_1_0= RULE_INT ) )
+            // InternalBoundingBox.g:335:4: (lv_distance_1_0= RULE_INT )
             {
-            // InternalBoundingBox.g:323:4: (lv_distance_1_0= RULE_INT )
-            // InternalBoundingBox.g:324:5: lv_distance_1_0= RULE_INT
+            // InternalBoundingBox.g:335:4: (lv_distance_1_0= RULE_INT )
+            // InternalBoundingBox.g:336:5: lv_distance_1_0= RULE_INT
             {
-            lv_distance_1_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            lv_distance_1_0=(Token)match(input,RULE_INT,FOLLOW_3); 
 
             					newLeafNode(lv_distance_1_0, grammarAccess.getMoveUpAccess().getDistanceINTTerminalRuleCall_1_0());
             				
@@ -897,6 +914,10 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
             }
 
+            otherlv_2=(Token)match(input,12,FOLLOW_2); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getMoveUpAccess().getControl000aKeyword_2());
+            		
 
             }
 
@@ -920,7 +941,7 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMoveDown"
-    // InternalBoundingBox.g:344:1: entryRuleMoveDown returns [EObject current=null] : iv_ruleMoveDown= ruleMoveDown EOF ;
+    // InternalBoundingBox.g:360:1: entryRuleMoveDown returns [EObject current=null] : iv_ruleMoveDown= ruleMoveDown EOF ;
     public final EObject entryRuleMoveDown() throws RecognitionException {
         EObject current = null;
 
@@ -928,8 +949,8 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalBoundingBox.g:344:49: (iv_ruleMoveDown= ruleMoveDown EOF )
-            // InternalBoundingBox.g:345:2: iv_ruleMoveDown= ruleMoveDown EOF
+            // InternalBoundingBox.g:360:49: (iv_ruleMoveDown= ruleMoveDown EOF )
+            // InternalBoundingBox.g:361:2: iv_ruleMoveDown= ruleMoveDown EOF
             {
              newCompositeNode(grammarAccess.getMoveDownRule()); 
             pushFollow(FOLLOW_1);
@@ -956,34 +977,35 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMoveDown"
-    // InternalBoundingBox.g:351:1: ruleMoveDown returns [EObject current=null] : (otherlv_0= 'down' ( (lv_distance_1_0= RULE_INT ) ) ) ;
+    // InternalBoundingBox.g:367:1: ruleMoveDown returns [EObject current=null] : (otherlv_0= 'down' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' ) ;
     public final EObject ruleMoveDown() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_distance_1_0=null;
+        Token otherlv_2=null;
 
 
         	enterRule();
 
         try {
-            // InternalBoundingBox.g:357:2: ( (otherlv_0= 'down' ( (lv_distance_1_0= RULE_INT ) ) ) )
-            // InternalBoundingBox.g:358:2: (otherlv_0= 'down' ( (lv_distance_1_0= RULE_INT ) ) )
+            // InternalBoundingBox.g:373:2: ( (otherlv_0= 'down' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' ) )
+            // InternalBoundingBox.g:374:2: (otherlv_0= 'down' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' )
             {
-            // InternalBoundingBox.g:358:2: (otherlv_0= 'down' ( (lv_distance_1_0= RULE_INT ) ) )
-            // InternalBoundingBox.g:359:3: otherlv_0= 'down' ( (lv_distance_1_0= RULE_INT ) )
+            // InternalBoundingBox.g:374:2: (otherlv_0= 'down' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n' )
+            // InternalBoundingBox.g:375:3: otherlv_0= 'down' ( (lv_distance_1_0= RULE_INT ) ) otherlv_2= '\\n'
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_4); 
+            otherlv_0=(Token)match(input,16,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getMoveDownAccess().getDownKeyword_0());
             		
-            // InternalBoundingBox.g:363:3: ( (lv_distance_1_0= RULE_INT ) )
-            // InternalBoundingBox.g:364:4: (lv_distance_1_0= RULE_INT )
+            // InternalBoundingBox.g:379:3: ( (lv_distance_1_0= RULE_INT ) )
+            // InternalBoundingBox.g:380:4: (lv_distance_1_0= RULE_INT )
             {
-            // InternalBoundingBox.g:364:4: (lv_distance_1_0= RULE_INT )
-            // InternalBoundingBox.g:365:5: lv_distance_1_0= RULE_INT
+            // InternalBoundingBox.g:380:4: (lv_distance_1_0= RULE_INT )
+            // InternalBoundingBox.g:381:5: lv_distance_1_0= RULE_INT
             {
-            lv_distance_1_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            lv_distance_1_0=(Token)match(input,RULE_INT,FOLLOW_3); 
 
             					newLeafNode(lv_distance_1_0, grammarAccess.getMoveDownAccess().getDistanceINTTerminalRuleCall_1_0());
             				
@@ -1003,6 +1025,10 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
             }
 
+            otherlv_2=(Token)match(input,12,FOLLOW_2); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getMoveDownAccess().getControl000aKeyword_2());
+            		
 
             }
 
@@ -1031,7 +1057,8 @@ public class InternalBoundingBoxParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x000000000000F002L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x000000000001E002L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
 
 }

@@ -87,12 +87,16 @@ ruleWorld returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getWorldAccess().getBoxKeyword_1());
 		}
+		otherlv_2='\n'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getWorldAccess().getControl000aKeyword_2());
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWorldAccess().getMoveCommandsMoveParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getWorldAccess().getMoveCommandsMoveParserRuleCall_3_0());
 				}
-				lv_moveCommands_2_0=ruleMove
+				lv_moveCommands_3_0=ruleMove
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWorldRule());
@@ -100,7 +104,7 @@ ruleWorld returns [EObject current=null]
 					add(
 						$current,
 						"moveCommands",
-						lv_moveCommands_2_0,
+						lv_moveCommands_3_0,
 						"nl.tue.glt.BoundingBox.Move");
 					afterParserOrEnumRuleCall();
 				}
@@ -255,6 +259,10 @@ ruleMoveLeft returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_2='\n'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getMoveLeftAccess().getControl000aKeyword_2());
+		}
 	)
 ;
 
@@ -296,6 +304,10 @@ ruleMoveRight returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_2='\n'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getMoveRightAccess().getControl000aKeyword_2());
+		}
 	)
 ;
 
@@ -337,6 +349,10 @@ ruleMoveUp returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_2='\n'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getMoveUpAccess().getControl000aKeyword_2());
+		}
 	)
 ;
 
@@ -378,6 +394,10 @@ ruleMoveDown returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_2='\n'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getMoveDownAccess().getControl000aKeyword_2());
+		}
 	)
 ;
 

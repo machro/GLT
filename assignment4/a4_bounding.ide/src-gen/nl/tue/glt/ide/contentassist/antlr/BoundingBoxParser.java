@@ -43,7 +43,7 @@ public class BoundingBoxParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMoveRightAccess().getGroup(), "rule__MoveRight__Group__0");
 					put(grammarAccess.getMoveUpAccess().getGroup(), "rule__MoveUp__Group__0");
 					put(grammarAccess.getMoveDownAccess().getGroup(), "rule__MoveDown__Group__0");
-					put(grammarAccess.getWorldAccess().getMoveCommandsAssignment_2(), "rule__World__MoveCommandsAssignment_2");
+					put(grammarAccess.getWorldAccess().getMoveCommandsAssignment_3(), "rule__World__MoveCommandsAssignment_3");
 					put(grammarAccess.getMoveLeftAccess().getDistanceAssignment_1(), "rule__MoveLeft__DistanceAssignment_1");
 					put(grammarAccess.getMoveRightAccess().getDistanceAssignment_1(), "rule__MoveRight__DistanceAssignment_1");
 					put(grammarAccess.getMoveUpAccess().getDistanceAssignment_1(), "rule__MoveUp__DistanceAssignment_1");

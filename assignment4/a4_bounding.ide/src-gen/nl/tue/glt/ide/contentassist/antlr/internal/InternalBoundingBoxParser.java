@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBoundingBoxParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Box:'", "'left'", "'right'", "'up'", "'down'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Box:'", "'\\n'", "'left'", "'right'", "'up'", "'down'"
     };
     public static final int RULE_ID=5;
     public static final int RULE_WS=9;
@@ -30,6 +30,7 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__15=15;
+    public static final int T__16=16;
     public static final int RULE_INT=4;
     public static final int T__11=11;
     public static final int RULE_ML_COMMENT=7;
@@ -700,10 +701,10 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( ((LA1_0>=12 && LA1_0<=13)) ) {
+            if ( ((LA1_0>=13 && LA1_0<=14)) ) {
                 alt1=1;
             }
-            else if ( ((LA1_0>=14 && LA1_0<=15)) ) {
+            else if ( ((LA1_0>=15 && LA1_0<=16)) ) {
                 alt1=2;
             }
             else {
@@ -779,10 +780,10 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==12) ) {
+            if ( (LA2_0==13) ) {
                 alt2=1;
             }
-            else if ( (LA2_0==13) ) {
+            else if ( (LA2_0==14) ) {
                 alt2=2;
             }
             else {
@@ -858,10 +859,10 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==14) ) {
+            if ( (LA3_0==15) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==15) ) {
+            else if ( (LA3_0==16) ) {
                 alt3=2;
             }
             else {
@@ -1077,17 +1078,22 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__World__Group__2"
-    // InternalBoundingBox.g:369:1: rule__World__Group__2 : rule__World__Group__2__Impl ;
+    // InternalBoundingBox.g:369:1: rule__World__Group__2 : rule__World__Group__2__Impl rule__World__Group__3 ;
     public final void rule__World__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:373:1: ( rule__World__Group__2__Impl )
-            // InternalBoundingBox.g:374:2: rule__World__Group__2__Impl
+            // InternalBoundingBox.g:373:1: ( rule__World__Group__2__Impl rule__World__Group__3 )
+            // InternalBoundingBox.g:374:2: rule__World__Group__2__Impl rule__World__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_5);
             rule__World__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__World__Group__3();
 
             state._fsp--;
 
@@ -1110,49 +1116,21 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__World__Group__2__Impl"
-    // InternalBoundingBox.g:380:1: rule__World__Group__2__Impl : ( ( rule__World__MoveCommandsAssignment_2 )* ) ;
+    // InternalBoundingBox.g:381:1: rule__World__Group__2__Impl : ( '\\n' ) ;
     public final void rule__World__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:384:1: ( ( ( rule__World__MoveCommandsAssignment_2 )* ) )
-            // InternalBoundingBox.g:385:1: ( ( rule__World__MoveCommandsAssignment_2 )* )
+            // InternalBoundingBox.g:385:1: ( ( '\\n' ) )
+            // InternalBoundingBox.g:386:1: ( '\\n' )
             {
-            // InternalBoundingBox.g:385:1: ( ( rule__World__MoveCommandsAssignment_2 )* )
-            // InternalBoundingBox.g:386:2: ( rule__World__MoveCommandsAssignment_2 )*
+            // InternalBoundingBox.g:386:1: ( '\\n' )
+            // InternalBoundingBox.g:387:2: '\\n'
             {
-             before(grammarAccess.getWorldAccess().getMoveCommandsAssignment_2()); 
-            // InternalBoundingBox.g:387:2: ( rule__World__MoveCommandsAssignment_2 )*
-            loop4:
-            do {
-                int alt4=2;
-                int LA4_0 = input.LA(1);
-
-                if ( ((LA4_0>=12 && LA4_0<=15)) ) {
-                    alt4=1;
-                }
-
-
-                switch (alt4) {
-            	case 1 :
-            	    // InternalBoundingBox.g:387:3: rule__World__MoveCommandsAssignment_2
-            	    {
-            	    pushFollow(FOLLOW_5);
-            	    rule__World__MoveCommandsAssignment_2();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop4;
-                }
-            } while (true);
-
-             after(grammarAccess.getWorldAccess().getMoveCommandsAssignment_2()); 
+             before(grammarAccess.getWorldAccess().getControl000aKeyword_2()); 
+            match(input,12,FOLLOW_2); 
+             after(grammarAccess.getWorldAccess().getControl000aKeyword_2()); 
 
             }
 
@@ -1174,17 +1152,115 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__World__Group__2__Impl"
 
 
+    // $ANTLR start "rule__World__Group__3"
+    // InternalBoundingBox.g:396:1: rule__World__Group__3 : rule__World__Group__3__Impl ;
+    public final void rule__World__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalBoundingBox.g:400:1: ( rule__World__Group__3__Impl )
+            // InternalBoundingBox.g:401:2: rule__World__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__World__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__World__Group__3"
+
+
+    // $ANTLR start "rule__World__Group__3__Impl"
+    // InternalBoundingBox.g:407:1: rule__World__Group__3__Impl : ( ( rule__World__MoveCommandsAssignment_3 )* ) ;
+    public final void rule__World__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalBoundingBox.g:411:1: ( ( ( rule__World__MoveCommandsAssignment_3 )* ) )
+            // InternalBoundingBox.g:412:1: ( ( rule__World__MoveCommandsAssignment_3 )* )
+            {
+            // InternalBoundingBox.g:412:1: ( ( rule__World__MoveCommandsAssignment_3 )* )
+            // InternalBoundingBox.g:413:2: ( rule__World__MoveCommandsAssignment_3 )*
+            {
+             before(grammarAccess.getWorldAccess().getMoveCommandsAssignment_3()); 
+            // InternalBoundingBox.g:414:2: ( rule__World__MoveCommandsAssignment_3 )*
+            loop4:
+            do {
+                int alt4=2;
+                int LA4_0 = input.LA(1);
+
+                if ( ((LA4_0>=13 && LA4_0<=16)) ) {
+                    alt4=1;
+                }
+
+
+                switch (alt4) {
+            	case 1 :
+            	    // InternalBoundingBox.g:414:3: rule__World__MoveCommandsAssignment_3
+            	    {
+            	    pushFollow(FOLLOW_6);
+            	    rule__World__MoveCommandsAssignment_3();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop4;
+                }
+            } while (true);
+
+             after(grammarAccess.getWorldAccess().getMoveCommandsAssignment_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__World__Group__3__Impl"
+
+
     // $ANTLR start "rule__MoveLeft__Group__0"
-    // InternalBoundingBox.g:396:1: rule__MoveLeft__Group__0 : rule__MoveLeft__Group__0__Impl rule__MoveLeft__Group__1 ;
+    // InternalBoundingBox.g:423:1: rule__MoveLeft__Group__0 : rule__MoveLeft__Group__0__Impl rule__MoveLeft__Group__1 ;
     public final void rule__MoveLeft__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:400:1: ( rule__MoveLeft__Group__0__Impl rule__MoveLeft__Group__1 )
-            // InternalBoundingBox.g:401:2: rule__MoveLeft__Group__0__Impl rule__MoveLeft__Group__1
+            // InternalBoundingBox.g:427:1: ( rule__MoveLeft__Group__0__Impl rule__MoveLeft__Group__1 )
+            // InternalBoundingBox.g:428:2: rule__MoveLeft__Group__0__Impl rule__MoveLeft__Group__1
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_7);
             rule__MoveLeft__Group__0__Impl();
 
             state._fsp--;
@@ -1213,20 +1289,20 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveLeft__Group__0__Impl"
-    // InternalBoundingBox.g:408:1: rule__MoveLeft__Group__0__Impl : ( 'left' ) ;
+    // InternalBoundingBox.g:435:1: rule__MoveLeft__Group__0__Impl : ( 'left' ) ;
     public final void rule__MoveLeft__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:412:1: ( ( 'left' ) )
-            // InternalBoundingBox.g:413:1: ( 'left' )
+            // InternalBoundingBox.g:439:1: ( ( 'left' ) )
+            // InternalBoundingBox.g:440:1: ( 'left' )
             {
-            // InternalBoundingBox.g:413:1: ( 'left' )
-            // InternalBoundingBox.g:414:2: 'left'
+            // InternalBoundingBox.g:440:1: ( 'left' )
+            // InternalBoundingBox.g:441:2: 'left'
             {
              before(grammarAccess.getMoveLeftAccess().getLeftKeyword_0()); 
-            match(input,12,FOLLOW_2); 
+            match(input,13,FOLLOW_2); 
              after(grammarAccess.getMoveLeftAccess().getLeftKeyword_0()); 
 
             }
@@ -1250,17 +1326,22 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveLeft__Group__1"
-    // InternalBoundingBox.g:423:1: rule__MoveLeft__Group__1 : rule__MoveLeft__Group__1__Impl ;
+    // InternalBoundingBox.g:450:1: rule__MoveLeft__Group__1 : rule__MoveLeft__Group__1__Impl rule__MoveLeft__Group__2 ;
     public final void rule__MoveLeft__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:427:1: ( rule__MoveLeft__Group__1__Impl )
-            // InternalBoundingBox.g:428:2: rule__MoveLeft__Group__1__Impl
+            // InternalBoundingBox.g:454:1: ( rule__MoveLeft__Group__1__Impl rule__MoveLeft__Group__2 )
+            // InternalBoundingBox.g:455:2: rule__MoveLeft__Group__1__Impl rule__MoveLeft__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_4);
             rule__MoveLeft__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__MoveLeft__Group__2();
 
             state._fsp--;
 
@@ -1283,21 +1364,21 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveLeft__Group__1__Impl"
-    // InternalBoundingBox.g:434:1: rule__MoveLeft__Group__1__Impl : ( ( rule__MoveLeft__DistanceAssignment_1 ) ) ;
+    // InternalBoundingBox.g:462:1: rule__MoveLeft__Group__1__Impl : ( ( rule__MoveLeft__DistanceAssignment_1 ) ) ;
     public final void rule__MoveLeft__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:438:1: ( ( ( rule__MoveLeft__DistanceAssignment_1 ) ) )
-            // InternalBoundingBox.g:439:1: ( ( rule__MoveLeft__DistanceAssignment_1 ) )
+            // InternalBoundingBox.g:466:1: ( ( ( rule__MoveLeft__DistanceAssignment_1 ) ) )
+            // InternalBoundingBox.g:467:1: ( ( rule__MoveLeft__DistanceAssignment_1 ) )
             {
-            // InternalBoundingBox.g:439:1: ( ( rule__MoveLeft__DistanceAssignment_1 ) )
-            // InternalBoundingBox.g:440:2: ( rule__MoveLeft__DistanceAssignment_1 )
+            // InternalBoundingBox.g:467:1: ( ( rule__MoveLeft__DistanceAssignment_1 ) )
+            // InternalBoundingBox.g:468:2: ( rule__MoveLeft__DistanceAssignment_1 )
             {
              before(grammarAccess.getMoveLeftAccess().getDistanceAssignment_1()); 
-            // InternalBoundingBox.g:441:2: ( rule__MoveLeft__DistanceAssignment_1 )
-            // InternalBoundingBox.g:441:3: rule__MoveLeft__DistanceAssignment_1
+            // InternalBoundingBox.g:469:2: ( rule__MoveLeft__DistanceAssignment_1 )
+            // InternalBoundingBox.g:469:3: rule__MoveLeft__DistanceAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__MoveLeft__DistanceAssignment_1();
@@ -1329,17 +1410,87 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__MoveLeft__Group__1__Impl"
 
 
+    // $ANTLR start "rule__MoveLeft__Group__2"
+    // InternalBoundingBox.g:477:1: rule__MoveLeft__Group__2 : rule__MoveLeft__Group__2__Impl ;
+    public final void rule__MoveLeft__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalBoundingBox.g:481:1: ( rule__MoveLeft__Group__2__Impl )
+            // InternalBoundingBox.g:482:2: rule__MoveLeft__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__MoveLeft__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MoveLeft__Group__2"
+
+
+    // $ANTLR start "rule__MoveLeft__Group__2__Impl"
+    // InternalBoundingBox.g:488:1: rule__MoveLeft__Group__2__Impl : ( '\\n' ) ;
+    public final void rule__MoveLeft__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalBoundingBox.g:492:1: ( ( '\\n' ) )
+            // InternalBoundingBox.g:493:1: ( '\\n' )
+            {
+            // InternalBoundingBox.g:493:1: ( '\\n' )
+            // InternalBoundingBox.g:494:2: '\\n'
+            {
+             before(grammarAccess.getMoveLeftAccess().getControl000aKeyword_2()); 
+            match(input,12,FOLLOW_2); 
+             after(grammarAccess.getMoveLeftAccess().getControl000aKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MoveLeft__Group__2__Impl"
+
+
     // $ANTLR start "rule__MoveRight__Group__0"
-    // InternalBoundingBox.g:450:1: rule__MoveRight__Group__0 : rule__MoveRight__Group__0__Impl rule__MoveRight__Group__1 ;
+    // InternalBoundingBox.g:504:1: rule__MoveRight__Group__0 : rule__MoveRight__Group__0__Impl rule__MoveRight__Group__1 ;
     public final void rule__MoveRight__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:454:1: ( rule__MoveRight__Group__0__Impl rule__MoveRight__Group__1 )
-            // InternalBoundingBox.g:455:2: rule__MoveRight__Group__0__Impl rule__MoveRight__Group__1
+            // InternalBoundingBox.g:508:1: ( rule__MoveRight__Group__0__Impl rule__MoveRight__Group__1 )
+            // InternalBoundingBox.g:509:2: rule__MoveRight__Group__0__Impl rule__MoveRight__Group__1
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_7);
             rule__MoveRight__Group__0__Impl();
 
             state._fsp--;
@@ -1368,20 +1519,20 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveRight__Group__0__Impl"
-    // InternalBoundingBox.g:462:1: rule__MoveRight__Group__0__Impl : ( 'right' ) ;
+    // InternalBoundingBox.g:516:1: rule__MoveRight__Group__0__Impl : ( 'right' ) ;
     public final void rule__MoveRight__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:466:1: ( ( 'right' ) )
-            // InternalBoundingBox.g:467:1: ( 'right' )
+            // InternalBoundingBox.g:520:1: ( ( 'right' ) )
+            // InternalBoundingBox.g:521:1: ( 'right' )
             {
-            // InternalBoundingBox.g:467:1: ( 'right' )
-            // InternalBoundingBox.g:468:2: 'right'
+            // InternalBoundingBox.g:521:1: ( 'right' )
+            // InternalBoundingBox.g:522:2: 'right'
             {
              before(grammarAccess.getMoveRightAccess().getRightKeyword_0()); 
-            match(input,13,FOLLOW_2); 
+            match(input,14,FOLLOW_2); 
              after(grammarAccess.getMoveRightAccess().getRightKeyword_0()); 
 
             }
@@ -1405,17 +1556,22 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveRight__Group__1"
-    // InternalBoundingBox.g:477:1: rule__MoveRight__Group__1 : rule__MoveRight__Group__1__Impl ;
+    // InternalBoundingBox.g:531:1: rule__MoveRight__Group__1 : rule__MoveRight__Group__1__Impl rule__MoveRight__Group__2 ;
     public final void rule__MoveRight__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:481:1: ( rule__MoveRight__Group__1__Impl )
-            // InternalBoundingBox.g:482:2: rule__MoveRight__Group__1__Impl
+            // InternalBoundingBox.g:535:1: ( rule__MoveRight__Group__1__Impl rule__MoveRight__Group__2 )
+            // InternalBoundingBox.g:536:2: rule__MoveRight__Group__1__Impl rule__MoveRight__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_4);
             rule__MoveRight__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__MoveRight__Group__2();
 
             state._fsp--;
 
@@ -1438,21 +1594,21 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveRight__Group__1__Impl"
-    // InternalBoundingBox.g:488:1: rule__MoveRight__Group__1__Impl : ( ( rule__MoveRight__DistanceAssignment_1 ) ) ;
+    // InternalBoundingBox.g:543:1: rule__MoveRight__Group__1__Impl : ( ( rule__MoveRight__DistanceAssignment_1 ) ) ;
     public final void rule__MoveRight__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:492:1: ( ( ( rule__MoveRight__DistanceAssignment_1 ) ) )
-            // InternalBoundingBox.g:493:1: ( ( rule__MoveRight__DistanceAssignment_1 ) )
+            // InternalBoundingBox.g:547:1: ( ( ( rule__MoveRight__DistanceAssignment_1 ) ) )
+            // InternalBoundingBox.g:548:1: ( ( rule__MoveRight__DistanceAssignment_1 ) )
             {
-            // InternalBoundingBox.g:493:1: ( ( rule__MoveRight__DistanceAssignment_1 ) )
-            // InternalBoundingBox.g:494:2: ( rule__MoveRight__DistanceAssignment_1 )
+            // InternalBoundingBox.g:548:1: ( ( rule__MoveRight__DistanceAssignment_1 ) )
+            // InternalBoundingBox.g:549:2: ( rule__MoveRight__DistanceAssignment_1 )
             {
              before(grammarAccess.getMoveRightAccess().getDistanceAssignment_1()); 
-            // InternalBoundingBox.g:495:2: ( rule__MoveRight__DistanceAssignment_1 )
-            // InternalBoundingBox.g:495:3: rule__MoveRight__DistanceAssignment_1
+            // InternalBoundingBox.g:550:2: ( rule__MoveRight__DistanceAssignment_1 )
+            // InternalBoundingBox.g:550:3: rule__MoveRight__DistanceAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__MoveRight__DistanceAssignment_1();
@@ -1484,17 +1640,87 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__MoveRight__Group__1__Impl"
 
 
+    // $ANTLR start "rule__MoveRight__Group__2"
+    // InternalBoundingBox.g:558:1: rule__MoveRight__Group__2 : rule__MoveRight__Group__2__Impl ;
+    public final void rule__MoveRight__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalBoundingBox.g:562:1: ( rule__MoveRight__Group__2__Impl )
+            // InternalBoundingBox.g:563:2: rule__MoveRight__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__MoveRight__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MoveRight__Group__2"
+
+
+    // $ANTLR start "rule__MoveRight__Group__2__Impl"
+    // InternalBoundingBox.g:569:1: rule__MoveRight__Group__2__Impl : ( '\\n' ) ;
+    public final void rule__MoveRight__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalBoundingBox.g:573:1: ( ( '\\n' ) )
+            // InternalBoundingBox.g:574:1: ( '\\n' )
+            {
+            // InternalBoundingBox.g:574:1: ( '\\n' )
+            // InternalBoundingBox.g:575:2: '\\n'
+            {
+             before(grammarAccess.getMoveRightAccess().getControl000aKeyword_2()); 
+            match(input,12,FOLLOW_2); 
+             after(grammarAccess.getMoveRightAccess().getControl000aKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MoveRight__Group__2__Impl"
+
+
     // $ANTLR start "rule__MoveUp__Group__0"
-    // InternalBoundingBox.g:504:1: rule__MoveUp__Group__0 : rule__MoveUp__Group__0__Impl rule__MoveUp__Group__1 ;
+    // InternalBoundingBox.g:585:1: rule__MoveUp__Group__0 : rule__MoveUp__Group__0__Impl rule__MoveUp__Group__1 ;
     public final void rule__MoveUp__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:508:1: ( rule__MoveUp__Group__0__Impl rule__MoveUp__Group__1 )
-            // InternalBoundingBox.g:509:2: rule__MoveUp__Group__0__Impl rule__MoveUp__Group__1
+            // InternalBoundingBox.g:589:1: ( rule__MoveUp__Group__0__Impl rule__MoveUp__Group__1 )
+            // InternalBoundingBox.g:590:2: rule__MoveUp__Group__0__Impl rule__MoveUp__Group__1
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_7);
             rule__MoveUp__Group__0__Impl();
 
             state._fsp--;
@@ -1523,20 +1749,20 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveUp__Group__0__Impl"
-    // InternalBoundingBox.g:516:1: rule__MoveUp__Group__0__Impl : ( 'up' ) ;
+    // InternalBoundingBox.g:597:1: rule__MoveUp__Group__0__Impl : ( 'up' ) ;
     public final void rule__MoveUp__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:520:1: ( ( 'up' ) )
-            // InternalBoundingBox.g:521:1: ( 'up' )
+            // InternalBoundingBox.g:601:1: ( ( 'up' ) )
+            // InternalBoundingBox.g:602:1: ( 'up' )
             {
-            // InternalBoundingBox.g:521:1: ( 'up' )
-            // InternalBoundingBox.g:522:2: 'up'
+            // InternalBoundingBox.g:602:1: ( 'up' )
+            // InternalBoundingBox.g:603:2: 'up'
             {
              before(grammarAccess.getMoveUpAccess().getUpKeyword_0()); 
-            match(input,14,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getMoveUpAccess().getUpKeyword_0()); 
 
             }
@@ -1560,17 +1786,22 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveUp__Group__1"
-    // InternalBoundingBox.g:531:1: rule__MoveUp__Group__1 : rule__MoveUp__Group__1__Impl ;
+    // InternalBoundingBox.g:612:1: rule__MoveUp__Group__1 : rule__MoveUp__Group__1__Impl rule__MoveUp__Group__2 ;
     public final void rule__MoveUp__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:535:1: ( rule__MoveUp__Group__1__Impl )
-            // InternalBoundingBox.g:536:2: rule__MoveUp__Group__1__Impl
+            // InternalBoundingBox.g:616:1: ( rule__MoveUp__Group__1__Impl rule__MoveUp__Group__2 )
+            // InternalBoundingBox.g:617:2: rule__MoveUp__Group__1__Impl rule__MoveUp__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_4);
             rule__MoveUp__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__MoveUp__Group__2();
 
             state._fsp--;
 
@@ -1593,21 +1824,21 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveUp__Group__1__Impl"
-    // InternalBoundingBox.g:542:1: rule__MoveUp__Group__1__Impl : ( ( rule__MoveUp__DistanceAssignment_1 ) ) ;
+    // InternalBoundingBox.g:624:1: rule__MoveUp__Group__1__Impl : ( ( rule__MoveUp__DistanceAssignment_1 ) ) ;
     public final void rule__MoveUp__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:546:1: ( ( ( rule__MoveUp__DistanceAssignment_1 ) ) )
-            // InternalBoundingBox.g:547:1: ( ( rule__MoveUp__DistanceAssignment_1 ) )
+            // InternalBoundingBox.g:628:1: ( ( ( rule__MoveUp__DistanceAssignment_1 ) ) )
+            // InternalBoundingBox.g:629:1: ( ( rule__MoveUp__DistanceAssignment_1 ) )
             {
-            // InternalBoundingBox.g:547:1: ( ( rule__MoveUp__DistanceAssignment_1 ) )
-            // InternalBoundingBox.g:548:2: ( rule__MoveUp__DistanceAssignment_1 )
+            // InternalBoundingBox.g:629:1: ( ( rule__MoveUp__DistanceAssignment_1 ) )
+            // InternalBoundingBox.g:630:2: ( rule__MoveUp__DistanceAssignment_1 )
             {
              before(grammarAccess.getMoveUpAccess().getDistanceAssignment_1()); 
-            // InternalBoundingBox.g:549:2: ( rule__MoveUp__DistanceAssignment_1 )
-            // InternalBoundingBox.g:549:3: rule__MoveUp__DistanceAssignment_1
+            // InternalBoundingBox.g:631:2: ( rule__MoveUp__DistanceAssignment_1 )
+            // InternalBoundingBox.g:631:3: rule__MoveUp__DistanceAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__MoveUp__DistanceAssignment_1();
@@ -1639,17 +1870,87 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__MoveUp__Group__1__Impl"
 
 
+    // $ANTLR start "rule__MoveUp__Group__2"
+    // InternalBoundingBox.g:639:1: rule__MoveUp__Group__2 : rule__MoveUp__Group__2__Impl ;
+    public final void rule__MoveUp__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalBoundingBox.g:643:1: ( rule__MoveUp__Group__2__Impl )
+            // InternalBoundingBox.g:644:2: rule__MoveUp__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__MoveUp__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MoveUp__Group__2"
+
+
+    // $ANTLR start "rule__MoveUp__Group__2__Impl"
+    // InternalBoundingBox.g:650:1: rule__MoveUp__Group__2__Impl : ( '\\n' ) ;
+    public final void rule__MoveUp__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalBoundingBox.g:654:1: ( ( '\\n' ) )
+            // InternalBoundingBox.g:655:1: ( '\\n' )
+            {
+            // InternalBoundingBox.g:655:1: ( '\\n' )
+            // InternalBoundingBox.g:656:2: '\\n'
+            {
+             before(grammarAccess.getMoveUpAccess().getControl000aKeyword_2()); 
+            match(input,12,FOLLOW_2); 
+             after(grammarAccess.getMoveUpAccess().getControl000aKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MoveUp__Group__2__Impl"
+
+
     // $ANTLR start "rule__MoveDown__Group__0"
-    // InternalBoundingBox.g:558:1: rule__MoveDown__Group__0 : rule__MoveDown__Group__0__Impl rule__MoveDown__Group__1 ;
+    // InternalBoundingBox.g:666:1: rule__MoveDown__Group__0 : rule__MoveDown__Group__0__Impl rule__MoveDown__Group__1 ;
     public final void rule__MoveDown__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:562:1: ( rule__MoveDown__Group__0__Impl rule__MoveDown__Group__1 )
-            // InternalBoundingBox.g:563:2: rule__MoveDown__Group__0__Impl rule__MoveDown__Group__1
+            // InternalBoundingBox.g:670:1: ( rule__MoveDown__Group__0__Impl rule__MoveDown__Group__1 )
+            // InternalBoundingBox.g:671:2: rule__MoveDown__Group__0__Impl rule__MoveDown__Group__1
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_7);
             rule__MoveDown__Group__0__Impl();
 
             state._fsp--;
@@ -1678,20 +1979,20 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveDown__Group__0__Impl"
-    // InternalBoundingBox.g:570:1: rule__MoveDown__Group__0__Impl : ( 'down' ) ;
+    // InternalBoundingBox.g:678:1: rule__MoveDown__Group__0__Impl : ( 'down' ) ;
     public final void rule__MoveDown__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:574:1: ( ( 'down' ) )
-            // InternalBoundingBox.g:575:1: ( 'down' )
+            // InternalBoundingBox.g:682:1: ( ( 'down' ) )
+            // InternalBoundingBox.g:683:1: ( 'down' )
             {
-            // InternalBoundingBox.g:575:1: ( 'down' )
-            // InternalBoundingBox.g:576:2: 'down'
+            // InternalBoundingBox.g:683:1: ( 'down' )
+            // InternalBoundingBox.g:684:2: 'down'
             {
              before(grammarAccess.getMoveDownAccess().getDownKeyword_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getMoveDownAccess().getDownKeyword_0()); 
 
             }
@@ -1715,17 +2016,22 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveDown__Group__1"
-    // InternalBoundingBox.g:585:1: rule__MoveDown__Group__1 : rule__MoveDown__Group__1__Impl ;
+    // InternalBoundingBox.g:693:1: rule__MoveDown__Group__1 : rule__MoveDown__Group__1__Impl rule__MoveDown__Group__2 ;
     public final void rule__MoveDown__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:589:1: ( rule__MoveDown__Group__1__Impl )
-            // InternalBoundingBox.g:590:2: rule__MoveDown__Group__1__Impl
+            // InternalBoundingBox.g:697:1: ( rule__MoveDown__Group__1__Impl rule__MoveDown__Group__2 )
+            // InternalBoundingBox.g:698:2: rule__MoveDown__Group__1__Impl rule__MoveDown__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_4);
             rule__MoveDown__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__MoveDown__Group__2();
 
             state._fsp--;
 
@@ -1748,21 +2054,21 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveDown__Group__1__Impl"
-    // InternalBoundingBox.g:596:1: rule__MoveDown__Group__1__Impl : ( ( rule__MoveDown__DistanceAssignment_1 ) ) ;
+    // InternalBoundingBox.g:705:1: rule__MoveDown__Group__1__Impl : ( ( rule__MoveDown__DistanceAssignment_1 ) ) ;
     public final void rule__MoveDown__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:600:1: ( ( ( rule__MoveDown__DistanceAssignment_1 ) ) )
-            // InternalBoundingBox.g:601:1: ( ( rule__MoveDown__DistanceAssignment_1 ) )
+            // InternalBoundingBox.g:709:1: ( ( ( rule__MoveDown__DistanceAssignment_1 ) ) )
+            // InternalBoundingBox.g:710:1: ( ( rule__MoveDown__DistanceAssignment_1 ) )
             {
-            // InternalBoundingBox.g:601:1: ( ( rule__MoveDown__DistanceAssignment_1 ) )
-            // InternalBoundingBox.g:602:2: ( rule__MoveDown__DistanceAssignment_1 )
+            // InternalBoundingBox.g:710:1: ( ( rule__MoveDown__DistanceAssignment_1 ) )
+            // InternalBoundingBox.g:711:2: ( rule__MoveDown__DistanceAssignment_1 )
             {
              before(grammarAccess.getMoveDownAccess().getDistanceAssignment_1()); 
-            // InternalBoundingBox.g:603:2: ( rule__MoveDown__DistanceAssignment_1 )
-            // InternalBoundingBox.g:603:3: rule__MoveDown__DistanceAssignment_1
+            // InternalBoundingBox.g:712:2: ( rule__MoveDown__DistanceAssignment_1 )
+            // InternalBoundingBox.g:712:3: rule__MoveDown__DistanceAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__MoveDown__DistanceAssignment_1();
@@ -1794,26 +2100,55 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__MoveDown__Group__1__Impl"
 
 
-    // $ANTLR start "rule__World__MoveCommandsAssignment_2"
-    // InternalBoundingBox.g:612:1: rule__World__MoveCommandsAssignment_2 : ( ruleMove ) ;
-    public final void rule__World__MoveCommandsAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__MoveDown__Group__2"
+    // InternalBoundingBox.g:720:1: rule__MoveDown__Group__2 : rule__MoveDown__Group__2__Impl ;
+    public final void rule__MoveDown__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:616:1: ( ( ruleMove ) )
-            // InternalBoundingBox.g:617:2: ( ruleMove )
+            // InternalBoundingBox.g:724:1: ( rule__MoveDown__Group__2__Impl )
+            // InternalBoundingBox.g:725:2: rule__MoveDown__Group__2__Impl
             {
-            // InternalBoundingBox.g:617:2: ( ruleMove )
-            // InternalBoundingBox.g:618:3: ruleMove
-            {
-             before(grammarAccess.getWorldAccess().getMoveCommandsMoveParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
-            ruleMove();
+            rule__MoveDown__Group__2__Impl();
 
             state._fsp--;
 
-             after(grammarAccess.getWorldAccess().getMoveCommandsMoveParserRuleCall_2_0()); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MoveDown__Group__2"
+
+
+    // $ANTLR start "rule__MoveDown__Group__2__Impl"
+    // InternalBoundingBox.g:731:1: rule__MoveDown__Group__2__Impl : ( '\\n' ) ;
+    public final void rule__MoveDown__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalBoundingBox.g:735:1: ( ( '\\n' ) )
+            // InternalBoundingBox.g:736:1: ( '\\n' )
+            {
+            // InternalBoundingBox.g:736:1: ( '\\n' )
+            // InternalBoundingBox.g:737:2: '\\n'
+            {
+             before(grammarAccess.getMoveDownAccess().getControl000aKeyword_2()); 
+            match(input,12,FOLLOW_2); 
+             after(grammarAccess.getMoveDownAccess().getControl000aKeyword_2()); 
 
             }
 
@@ -1832,21 +2167,62 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__World__MoveCommandsAssignment_2"
+    // $ANTLR end "rule__MoveDown__Group__2__Impl"
+
+
+    // $ANTLR start "rule__World__MoveCommandsAssignment_3"
+    // InternalBoundingBox.g:747:1: rule__World__MoveCommandsAssignment_3 : ( ruleMove ) ;
+    public final void rule__World__MoveCommandsAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalBoundingBox.g:751:1: ( ( ruleMove ) )
+            // InternalBoundingBox.g:752:2: ( ruleMove )
+            {
+            // InternalBoundingBox.g:752:2: ( ruleMove )
+            // InternalBoundingBox.g:753:3: ruleMove
+            {
+             before(grammarAccess.getWorldAccess().getMoveCommandsMoveParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_2);
+            ruleMove();
+
+            state._fsp--;
+
+             after(grammarAccess.getWorldAccess().getMoveCommandsMoveParserRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__World__MoveCommandsAssignment_3"
 
 
     // $ANTLR start "rule__MoveLeft__DistanceAssignment_1"
-    // InternalBoundingBox.g:627:1: rule__MoveLeft__DistanceAssignment_1 : ( RULE_INT ) ;
+    // InternalBoundingBox.g:762:1: rule__MoveLeft__DistanceAssignment_1 : ( RULE_INT ) ;
     public final void rule__MoveLeft__DistanceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:631:1: ( ( RULE_INT ) )
-            // InternalBoundingBox.g:632:2: ( RULE_INT )
+            // InternalBoundingBox.g:766:1: ( ( RULE_INT ) )
+            // InternalBoundingBox.g:767:2: ( RULE_INT )
             {
-            // InternalBoundingBox.g:632:2: ( RULE_INT )
-            // InternalBoundingBox.g:633:3: RULE_INT
+            // InternalBoundingBox.g:767:2: ( RULE_INT )
+            // InternalBoundingBox.g:768:3: RULE_INT
             {
              before(grammarAccess.getMoveLeftAccess().getDistanceINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -1873,17 +2249,17 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveRight__DistanceAssignment_1"
-    // InternalBoundingBox.g:642:1: rule__MoveRight__DistanceAssignment_1 : ( RULE_INT ) ;
+    // InternalBoundingBox.g:777:1: rule__MoveRight__DistanceAssignment_1 : ( RULE_INT ) ;
     public final void rule__MoveRight__DistanceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:646:1: ( ( RULE_INT ) )
-            // InternalBoundingBox.g:647:2: ( RULE_INT )
+            // InternalBoundingBox.g:781:1: ( ( RULE_INT ) )
+            // InternalBoundingBox.g:782:2: ( RULE_INT )
             {
-            // InternalBoundingBox.g:647:2: ( RULE_INT )
-            // InternalBoundingBox.g:648:3: RULE_INT
+            // InternalBoundingBox.g:782:2: ( RULE_INT )
+            // InternalBoundingBox.g:783:3: RULE_INT
             {
              before(grammarAccess.getMoveRightAccess().getDistanceINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -1910,17 +2286,17 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveUp__DistanceAssignment_1"
-    // InternalBoundingBox.g:657:1: rule__MoveUp__DistanceAssignment_1 : ( RULE_INT ) ;
+    // InternalBoundingBox.g:792:1: rule__MoveUp__DistanceAssignment_1 : ( RULE_INT ) ;
     public final void rule__MoveUp__DistanceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:661:1: ( ( RULE_INT ) )
-            // InternalBoundingBox.g:662:2: ( RULE_INT )
+            // InternalBoundingBox.g:796:1: ( ( RULE_INT ) )
+            // InternalBoundingBox.g:797:2: ( RULE_INT )
             {
-            // InternalBoundingBox.g:662:2: ( RULE_INT )
-            // InternalBoundingBox.g:663:3: RULE_INT
+            // InternalBoundingBox.g:797:2: ( RULE_INT )
+            // InternalBoundingBox.g:798:3: RULE_INT
             {
              before(grammarAccess.getMoveUpAccess().getDistanceINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -1947,17 +2323,17 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__MoveDown__DistanceAssignment_1"
-    // InternalBoundingBox.g:672:1: rule__MoveDown__DistanceAssignment_1 : ( RULE_INT ) ;
+    // InternalBoundingBox.g:807:1: rule__MoveDown__DistanceAssignment_1 : ( RULE_INT ) ;
     public final void rule__MoveDown__DistanceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBoundingBox.g:676:1: ( ( RULE_INT ) )
-            // InternalBoundingBox.g:677:2: ( RULE_INT )
+            // InternalBoundingBox.g:811:1: ( ( RULE_INT ) )
+            // InternalBoundingBox.g:812:2: ( RULE_INT )
             {
-            // InternalBoundingBox.g:677:2: ( RULE_INT )
-            // InternalBoundingBox.g:678:3: RULE_INT
+            // InternalBoundingBox.g:812:2: ( RULE_INT )
+            // InternalBoundingBox.g:813:3: RULE_INT
             {
              before(grammarAccess.getMoveDownAccess().getDistanceINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -1990,8 +2366,9 @@ public class InternalBoundingBoxParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x000000000000F000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x000000000000F002L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x000000000001E000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000000000001E002L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000010L});
 
 }

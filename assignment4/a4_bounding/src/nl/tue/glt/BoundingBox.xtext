@@ -3,7 +3,7 @@ grammar nl.tue.glt.BoundingBox with org.eclipse.xtext.common.Terminals
 generate boundingBox "http://www.tue.nl/glt/BoundingBox"
 
 World: {World}
-	'Box:'
+	'Box:' '\n'
 		moveCommands+=Move*;
 Move:
 	MoveX | MoveY;
@@ -15,13 +15,13 @@ MoveY:
 	MoveUp | MoveDown;
 
 MoveLeft:
-	'left' distance=INT;
+	'left' distance=INT '\n';
 
 MoveRight:
-	'right' distance=INT;
+	'right' distance=INT '\n';
 
 MoveUp:
-	'up' distance=INT;
+	'up' distance=INT '\n';
 
 MoveDown:
-	'down' distance=INT;
+	'down' distance=INT '\n';
