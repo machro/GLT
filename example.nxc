@@ -5,10 +5,11 @@
 #define FAST_SPEED   90
 #define TURN_SPEED   50
 
-#define MSG_NULL    0
-#define MSG_CONNECT 1
-#define MSG_LEFT    2
-#define MSG_RIGHT   3
+#define MSG_NULL      0
+#define MSG_CONNECT   1
+#define MSG_LEFT      2
+#define MSG_RIGHT     3
+#define MSG_ASSIGN_ID 4
 
 #define MIN_HEADWAY 20 //[%= minHeadway %]
 #define MAX_HEADWAY 30 //[%= maxHeadway %]
@@ -33,6 +34,7 @@ void ConnectNXT(const string name, byte channel)
 
 #endif
 
+int myID;
 int lastMessage = MSG_NULL;
 int numSlaves;
 
@@ -61,13 +63,33 @@ void letSlaveConnect(int channel)
   send(channel, MSG_CONNECT);
 }
 
+void assignSlaveID(int channel, int ID)
+{
+  send(channel, MSG_ASSIGN_ID);
+  send(channel, ID);
+}
+
 void connectToSlaves()
 {
-  // ---- generate this (up to 3 slaves)
-    ConnectNXT("slave1", 1);
-    ConnectNXT("slave2", 2);
-    ConnectNXT("slave3", 3);
-    numSlaves = 3;
+  // ---- generate this
+  
+  switch(myID)
+  {
+    case 2: // this car ID
+      ConnectNXT("slave3", 1);
+      assignSlaveID(1, 32498745); // second number is the ID of the following car
+      ConnectNXT("slave4", 2);
+      assignSlaveID(1, 15145134); // second number is the ID of the following car
+      numSlaves = 3;
+      break;
+    case 3:
+      ConnectNXT("slave5", 1);
+      assignSlaveID(1, 57379343); // second number is the ID of the following car
+      numSlaves = 3;
+      break;
+    default:
+      // this car has no followers
+  }
   // ---- end generate
 
   int channel = 0;
@@ -83,6 +105,15 @@ void waitForConnection()
   if(receive() == MSG_CONNECT)
   {
     connectToSlaves();
+  }
+  else
+  {
+    TextOut(0,LCD_LINE1,"Unexpected message");
+  }
+  
+  if(receive() == MSG_ASSIGN_ID)
+  {
+    myID = receive();
   }
   else
   {
@@ -151,6 +182,8 @@ void executeCommand()
   {
     TextOut(0,LCD_LINE1,"Unexpected message");
   }}
+  
+  lastMessage = MSG_NULL;
 }
 
 task keepDistance()
@@ -193,6 +226,7 @@ task listenToCommands()
 task main()
 {
   //[% if frontrunner { %]
+  myID = 0; // <-- ID of this car, since it is not following anyone, it needs to assign an ID to itself
   connectToSlaves();
   // ---- generate this from actual commands
   move(20);
@@ -201,9 +235,7 @@ task main()
   left();
   move(20);
   // ----
-  //[% } %]
-  
-  //[% if not frontrunner { %]
+  //[% } else { %]
   waitForConnection();
   connectToSlaves();
   Precedes(keepDistance, listenToCommands);
