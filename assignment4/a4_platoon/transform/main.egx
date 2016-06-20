@@ -1,7 +1,16 @@
-rule p2nxc 
+rule p2nxc1 
 	transform m : Model {
 	
-	template : "main.egl"
+	template : "first.egl"
 	
-	target : "../output/Platoon.nxc"
+	target : "../output/first.nxc"
 }
+
+rule p2nxc2 
+	transform m : Model {
+	
+	template : "followers.egl"
+	
+	target : "../output/followers.nxc"
+}
+
